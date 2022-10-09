@@ -50,23 +50,12 @@ void display(void)
    /* draw white polygon (rectangle) with corners at
     * (0.25, 0.25, 0.0) and (0.75, 0.75, 0.0)
     */
-   // glColor3f (1.0, 1.0, 1.0);
-   // glBegin(GL_POLYGON);
-   //    glVertex3f (0.25, 0.25, 0.0);
-   //    glVertex3f (0.75, 0.25, 0.0);
-   //    glVertex3f (0.75, 0.75, 0.0);
-   //    glVertex3f (0.25, 0.75, 0.0);
-   // glEnd();
-
-   GLdouble PI = 3.1415926535897;
-   GLint circle_points = 100;
-   GLfloat angle;
-   glBegin(GL_LINE_LOOP);
-   for (GLint i = 0; i < circle_points; i++)
-   {
-      angle = 2 * PI * i / circle_points;
-      glVertex2f(cos(angle), sin(angle));
-   }
+   glColor3f (1.0, 1.0, 1.0);
+   glBegin(GL_POLYGON);
+      glVertex3f (0.25, 0.25, 0.0);
+      glVertex3f (0.75, 0.25, 0.0);
+      glVertex3f (0.75, 0.75, 0.0);
+      glVertex3f (0.25, 0.75, 0.0);
    glEnd();
 
    /* don't wait!
@@ -97,9 +86,9 @@ int main(int argc, char **argv)
 {
    glutInit(&argc, argv);
    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-   glutInitWindowSize(250, 250);
+   glutInitWindowSize(750, 750);
    glutInitWindowPosition(100, 100);
-   glutCreateWindow("hello");
+   glutCreateWindow("GL_POLYGON");
    init();
    glutDisplayFunc(display);
    glutMainLoop();

@@ -1,5 +1,5 @@
 /*
- * Meu Primeiro Programa: lab2-01.cpp
+ * Meu Primeiro Programa: lab2-02.cpp
  * data 04/10/2022
  * Barbara Souza, RA 11009412
  * Cauê Montrose Bianchim, RA 11109715

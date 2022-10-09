@@ -34,35 +34,112 @@
 
     <h2>Procedimentos realizados</h2>
 
-    <p>Bla bla bla</p>
-    
+    <p>O primeiro passo do procedimento deste laboratório consistiu em executar o programa disponibilidado no Moodle e
+        observar seu resultado. A partir dele, mudou-se a primitiva que define a forma de desenhar o objeto para
+        verificar as mudanças visualmente. No caso do <code>GL_POINTS</code>, mudou-se o tamanho do ponto para 20 com o
+        comando <code>glPointSize(20)</code>, para facilitar a visualização.</p>
+
+    <div class="gallery">
+        <a target="_blank" href="img/GL_POINTS.png">
+            <img src="img/GL_POINTS.png" width="600" height="400">
+        </a>
+
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="img/GL_LINE_STRIP.png">
+            <img src="img/GL_LINE_STRIP.png" width="600" height="400">
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="img/GL_LINE_LOOP.png">
+            <img src="img/GL_LINE_LOOP.png" width="600" height="400">
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="img/GL_TRIANGLES.png">
+            <img src="img/GL_TRIANGLES.png" width="600" height="400">
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="img/GL_TRIANGLE_STRIP.png">
+            <img src="img/GL_TRIANGLE_STRIP.png" width="600" height="400">
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="img/GL_TRIANGLE_FAN.png">
+            <img src="img/GL_TRIANGLE_FAN.png" width="600" height="400">
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="img/GL_QUADS.png">
+            <img src="img/GL_QUADS.png" width="600" height="400">
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="img/GL_QUAD_STRIP.png">
+            <img src="img/GL_QUAD_STRIP.png" width="600" height="400">
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="img/GL_POLYGON.png">
+            <img src="img/GL_POLYGON.png" width="600" height="400">
+        </a>
+    </div>
+
+    <p>Observou-se também o resultado da troca de cor, a partir do comando <code>glColor3f()</code>. É possível trocar a
+        cor absoluta de cada vértice. Como mostra a imagem abaixo, entre dois vértices, as cores se misturam e produzem
+        outras na escala RGB.</p>
+
+    <div class="gallery">
+        <a target="_blank" href="img/triangulo.png">
+            <img src="img/triangulo.png" width="600" height="400">
+        </a>
+    </div>
+
+    <p>Conforme descrito no roteiro, não existe uma primitiva para desenhar um círculo. O que se faz é traçar diversos
+        pontos e interligá-los, de forma a dar impressão que um círculo foi formado. Quanto maior for a quantidade de
+        pontos, mais próximo de um círculo a imagem resultante será. A figura abaixo mostra um círculo desenhado a
+        partir de 100 pontos.</p>
+
+    <div class="gallery">
+        <a target="_blank" href="img/circulo.png">
+            <img src="img/circulo.png" width="600" height="400">
+        </a>
+    </div>
+
     <hr>
 
-    <h2>Imagens obtidas</h2>
+    <h2>Exercícios para entregar</h2>
 
-    <p>Bla bla bla</p>
+    <p>O primeiro exercício consistiu na construção de um polígono de 5 vértices. da cor ciano. Utilizou-se como
+        primitiva do <code>GL_POLYGON</code>, mas como o Open GL não consegue traçar um polígono concavo desta forma,
+        tornou-se necessário a construção de 2 polígonos complementares. O resultado é apresentado na figura abaixo e o
+        código fonte está presente no arquivo <a href="lab2-01.cpp">lab2-01.cpp</a>.</p>
 
     <div class="gallery">
-        <a target="_blank" href="img/img1.png">
-            <img src="img/img1.png" width="600" height="400">
+        <a target="_blank" href="img/lab02-01.png">
+            <img src="img/lab02-01.png" width="600" height="400">
         </a>
     </div>
 
-    <div class="gallery">
-        <a target="_blank" href="img/img2.png">
-            <img src="img/img2.png" width="600" height="400">
-        </a>
-    </div>
+    <p>O segundo exercício consistiu na contrução de diversas formas geométricas, algumas com cores distintas. Para
+        desenhar todas as formas, aproveitou-se do fato de que o Open GL sobrepoẽ as formas geométricas na ordem que
+        elas são executadas, sendo o mesmo válido para o comando de cores. Portanto, primeiro foi traçado um círculo
+        branco com 0,8 unidades de raio, um hexágono vermelho, um quadrado verde, um círculo azul, uma linha horizontal
+        e vertical e, por fim, um triângulo rosa. O resultado é apresentado na figura abaixo e o
+        código fonte está presente no arquivo <a href="lab2-02.cpp">lab2-02.cpp</a>.</p>
 
     <div class="gallery">
-        <a target="_blank" href="img/img3.png">
-            <img src="img/img3.png" width="600" height="400">
-        </a>
-    </div>
-    
-    <div class="gallery">
-        <a target="_blank" href="img/img4.png">
-            <img src="img/img4.png" width="600" height="400">
+        <a target="_blank" href="img/lab02-02.png">
+            <img src="img/lab02-02.png" width="600" height="400">
         </a>
     </div>
 
@@ -70,7 +147,11 @@
 
     <h2>Análises e conclusões</h2>
 
-    <p>Bla bla bla</p>
+    <p>Com este laboratório, verificou-se a facilidade de se construir formas geométricas a partir do Open GL. Para
+        isto, bastou-se apenas definir as coordenadas dos vértices da forma desejada, a cor do objeto (que é branco caso
+        não seja definido) e o tipo de primitiva. É importante salientar que essa facilidade foi parcialmente por conta
+        de estar sendo construídas formas estáticas, esperando que a dificuldade aumente quando forem construídas
+        imagens dinâmicas, como as observadas no primeiro laboratório.</p>
 
 </body>
 
