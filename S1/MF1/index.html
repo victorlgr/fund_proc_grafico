@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>S1 - MF1</title>
+</head>
+
+<body>
+    <h1>Seminário S1 - modelagem funcional</h1>
+
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>RA</th>
+        </tr>
+        <tr>
+            <td>Barbara Souza</td>
+            <td>11009412</td>
+        </tr>
+        <tr>
+            <td>Cauê Montrose Bianchim</td>
+            <td>11109715</td>
+        </tr>
+        <tr>
+            <td>Ismael</td>
+            <td>99999999</td>
+        </tr>
+        <tr>
+            <td>Rafael</td>
+            <td>99999999</td>
+        </tr>
+        <tr>
+            <td>Victor Luiz Gluz Romano</td>
+            <td>11109915</td>
+        </tr>
+    </table>
+
+    <h2>Sistema Massa Mola Amortecedor</h2>
+
+    <p>Para o projeto, optou-se por representar de forma didática um fundamento teórico estudado em disciplinas
+        passadas, o sistema massa-mola-amortecedor, visto na disciplina de Sistemas de controle 1, obrigatória para a
+        Engenharia da Informação, Engenharia de Instrumentação, Automação e Robótica e também para a Engenharia
+        Aeroespacial.</p>
+
+    <p>A imagem abaixo apresenta um sistema que consiste de uma única massa <strong>m</strong>, uma mola de coeficiente
+        elástico <strong>k</strong> e um amortecedor com coeficiente <strong>b</strong>. Além deles, temos uma força de
+        entrada <strong>F(t)</strong>. <strong>X(t)</strong> é a distância percorrida pela massa <strong>m</strong>.</p>
+
+    <div>
+        <a target="_blank" href="img/mma.png">
+            <img src="img/mma.png" height="300">
+        </a>
+    </div>
+
+    <p>Para obter a equação que rege este sistema, deve-se observar a 3ª lei de Newton:</p>
+
+    <div>
+        <a target="_blank" href="img/eq1.png">
+            <img src="img/eq1.png" height="100">
+        </a>
+    </div>
+
+    <p>Não temos a aceleração, mas temos a distância <strong>X(t)</strong>. Portanto podemos escrever a aceleração como:
+    </p>
+
+    <div>
+        <a target="_blank" href="img/eq2.png">
+            <img src="img/eq2.png" height="100">
+        </a>
+    </div>
+
+    <p>O sistema é composto por uma força <strong>F(t)</strong> a favor do movimento (mesma direção que
+        <strong>X(t)</strong>) e duas forças contrárias ao movimento. Portanto, a equação fica:
+    </p>
+
+    <div>
+        <a target="_blank" href="img/eq3.png">
+            <img src="img/eq3.png" height="100">
+        </a>
+    </div>
+
+    <p>Substituíndo a somatória de forças pela primeira equação apresentada, e deixando tudo em função de <strong>X(t)</strong>, temos:</p>
+
+    <div>
+        <a target="_blank" href="img/eq4.png">
+            <img src="img/eq4.png" height="100">
+        </a>
+    </div>
+
+    <p>Aplicando a transformada de Laplace considerando condições iniciais nulas, temos:</p>
+
+    <div>
+        <a target="_blank" href="img/eq5.png">
+            <img src="img/eq5.png" height="100">
+        </a>
+    </div>
+
+    <p>A função de transferência do sistema será portanto:</p>
+
+    <div>
+        <a target="_blank" href="img/eq6.png">
+            <img src="img/eq6.png" height="100">
+        </a>
+    </div>
+
+    <hr>
+
+    <h2>Referências bibliográficas</h2>
+
+    <p>OGATA, K. <strong>Engenharia de controle moderno</strong>, 5ª. Edição, Pearson, Rio de Janeiro, 2011, ISBN: 9788576058106.</p>
+
+</body>
+
+</html>
