@@ -29,28 +29,46 @@ void draw_bola(void)
    glEnd();
 }
 
+void draw_cilindro(void)
+{
+   glBegin(GL_POLYGON);
+
+   glVertex2d(75, 125);
+   glVertex2d(75, 0);
+   glVertex2d(0, 0);
+   glVertex2d(0, 125);
+
+   glVertex2d(10, 126);
+   glVertex2d(20, 127);
+   glVertex2d(30, 128);
+   glVertex2d(40, 128);
+   glVertex2d(50, 127);
+   glVertex2d(60, 126);
+   glVertex2d(70, 125);
+
+   glEnd();
+}
+
+void draw_triangulo(void){
+   glBegin(GL_POLYGON);
+   glVertex2d(0, 0);
+   glVertex2d(50, -75);
+   glVertex2d(100, 0);
+   glEnd();
+}
+
 void display(void)
 {
    glClear(GL_COLOR_BUFFER_BIT);
-   glColor3f(1.0, 1.0, 1.0);
+   glColor3f(1.0, 1.0, 0.0);
+   glLoadIdentity();
+   draw_cilindro();
 
-   for (int i = 0; i < 10; i++)
-   {
-      glLoadIdentity();
-      glTranslated(-200, -200, 0);
-      glTranslated(35 * i, (25 - i) * i, 0);
-      glRotatef(50 * i, 0.0, 0.0, 1.0);
-      draw_bola();
-   }
+   glColor3f(1.0, 0.0, 0.0);
+   glLoadIdentity();
+   glTranslated(-13, 0, 0);
+   draw_triangulo();
 
-   for (int j = 10; j < 15; j++)
-   {
-      glLoadIdentity();
-      glTranslated(-200, -200, 0);
-      glTranslated(35 * j, -20 * (j - 16), 0);
-      glRotatef(45 * j, 0.0, 0.0, 1.0);
-      draw_bola();
-   }
 
    glFlush();
 }
@@ -85,7 +103,7 @@ int main(int argc, char **argv)
    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
    glutInitWindowSize(600, 600);
    glutInitWindowPosition(100, 100);
-   glutCreateWindow("Bola de Rugby");
+   glutCreateWindow("Flecha");
    init();
    glutDisplayFunc(display);
    glutReshapeFunc(reshape);
