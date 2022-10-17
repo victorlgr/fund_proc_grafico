@@ -60,52 +60,139 @@ void init(void)
 void braco(void)
 {
    glPushMatrix();
+   // glRotatef(15, 1.0, 0.0, 0.0);
+   // glRotatef(-45, 0.0, 1.0, 0.0);
+   // glRotatef(-15, 0.0, 0.0, 1.0);
    glTranslatef(-1.0, 0.0, 0.0);
+
+   // Shoulder
    glRotatef((GLfloat)shoulder, 0.0, 0.0, 1.0);
    glTranslatef(1.0, 0.0, 0.0);
    glPushMatrix();
    glScalef(2.0, 0.4, 1.0);
    glutWireCube(1.0);
    glPopMatrix();
-
    glTranslatef(1.0, 0.0, 0.0);
+
+   // Elbow
    glRotatef((GLfloat)elbow, 0.0, 0.0, 1.0);
    glTranslatef(1.0, 0.0, 0.0);
    glPushMatrix();
    glScalef(2.0, 0.4, 1.0);
    glutWireCube(1.0);
    glPopMatrix();
-
-   glPopMatrix();
-   glutSwapBuffers();
-}
-
-void dedo(void){
-   glPushMatrix();
-   glTranslatef(-1.0, 0.0, 0.0);
-   glRotatef((GLfloat)falange1, 0.0, 0.0, 1.0);
-   glTranslatef(1, 0.0, 0.0);
-   glPushMatrix();
-   glScalef(2.0/5.0, 0.4/5.0, 1.0/5.0);
-   glutWireCube(1.0);
-   glPopMatrix();
-
-   glTranslatef(-0.7, 0.0, 0.0);
-   glRotatef((GLfloat)falange2, 0.0, 0.0, 1.0);
-   glTranslatef(1, 0.0, 0.0);
-   glPushMatrix();
-   glScalef(2.0/5.0, 0.4/5.0, 1.0/5.0);
-   glutWireCube(1.0);
-   glPopMatrix();
-
-   glPopMatrix();
-   glutSwapBuffers();
 }
 
 void display(void)
 {
    glClear(GL_COLOR_BUFFER_BIT);
-   dedo();
+   // Draw shoulder
+   glPushMatrix();
+   glRotatef(15, 1.0, 0.0, 0.0);
+   glRotatef(-75, 0.0, 1.0, 0.0);
+   glTranslatef(-1.0, 0.0, 0.0);
+   glRotatef((GLfloat)shoulder, 0.0, 0.0, 1.0);
+   glTranslatef(1.0, 0.0, 0.0);
+   glPushMatrix();
+   glScalef(2.0, 0.6, 0.65);
+   glutWireCube(1.0);
+   glPopMatrix();
+
+   // Draw elbow
+   glTranslatef(1.0, 0.0, 0.0);
+   glRotatef((GLfloat)elbow, 0.0, 0.0, 1.0);
+   glTranslatef(1.0, 0.0, 0.0);
+   glPushMatrix();
+   glScalef(2.0, 0.6, 0.65);
+   glutWireCube(1.0);
+   glPopMatrix();
+
+   // Draw fingerBase 1
+   glPushMatrix();
+   glTranslatef(1.0, 0.25, 0.0);
+   glRotatef(-(GLfloat)falange1, 0.0, 0.0, 1.0);
+   glTranslatef(0.15, 0.0, -0.25);
+   glPushMatrix();
+   glScalef(0.3, 0.1, 0.15);
+   glutWireCube(1);
+   glPopMatrix();
+
+   // Draw fingerUp 1
+   glTranslatef(0.15, 0.0, 0.0);
+   glRotatef(-(GLfloat)falange2, 0.0, 0.0, 1.0);
+   glTranslatef(0.15, 0.0, 0.0);
+   glPushMatrix();
+   glScalef(0.3, 0.1, 0.15);
+   glutWireCube(1);
+   glPopMatrix();
+
+   glPopMatrix();
+
+   // Draw fingerBase 2
+   glPushMatrix();
+   glTranslatef(1.0, 0.25, 0.0);
+   glRotatef(-(GLfloat)falange1, 0.0, 0.0, 1.0);
+   glTranslatef(0.15, 0.0, 0.0);
+   glPushMatrix();
+   glScalef(0.3, 0.1, 0.15);
+   glutWireCube(1);
+   glPopMatrix();
+
+   // Draw fingerUp 2
+   glTranslatef(0.15, 0.0, 0.0);
+   glRotatef(-(GLfloat)falange2, 0.0, 0.0, 1.0);
+   glTranslatef(0.15, 0.0, 0.0);
+   glPushMatrix();
+   glScalef(0.3, 0.1, 0.15);
+   glutWireCube(1);
+   glPopMatrix();
+
+   glPopMatrix();
+
+   // Draw fingerBase 3
+   glPushMatrix();
+   glTranslatef(1.0, 0.25, 0.0);
+   glRotatef(-(GLfloat)falange1, 0.0, 0.0, 1.0);
+   glTranslatef(0.15, 0.0, 0.25);
+   glPushMatrix();
+   glScalef(0.3, 0.1, 0.15);
+   glutWireCube(1);
+   glPopMatrix();
+
+   // Draw fingerUp 3
+   glTranslatef(0.15, 0.0, 0.0);
+   glRotatef(-(GLfloat)falange2, 0.0, 0.0, 1.0);
+   glTranslatef(0.15, 0.0, 0.0);
+   glPushMatrix();
+   glScalef(0.3, 0.1, 0.15);
+   glutWireCube(1);
+   glPopMatrix();
+
+   glPopMatrix();
+
+   // Draw fingerBase 4 (Thumb)
+   glPushMatrix();
+   glTranslatef(1.0, -0.25, 0.0);
+   glRotatef((GLfloat)falange1, 0.0, 0.0, 1.0);
+   glTranslatef(0.15, 0.0, 0.0);
+   glPushMatrix();
+   glScalef(0.3, 0.1, 0.15);
+   glutWireCube(1);
+   glPopMatrix();
+
+   // Draw fingerUp 4
+   glTranslatef(0.15, 0.0, 0.0);
+   glRotatef((GLfloat)falange2, 0.0, 0.0, 1.0);
+   glTranslatef(0.15, 0.0, 0.0);
+   glPushMatrix();
+   glScalef(0.3, 0.1, 0.15);
+   glutWireCube(1);
+   glPopMatrix();
+
+   glPopMatrix();
+
+   glPopMatrix();
+   glutSwapBuffers();
 }
 
 void reshape(int w, int h)
@@ -141,19 +228,19 @@ void keyboard(unsigned char key, int x, int y)
       break;
 
    case 'n':
-      falange1 = (falange1 + 1) % 360;
+      falange1 = (falange1 + 5) % 360;
       glutPostRedisplay();
       break;
    case 'N':
-      falange1 = (falange1 - 1) % 360;
+      falange1 = (falange1 - 5) % 360;
       glutPostRedisplay();
       break;
    case 'm':
-      falange2 = (falange2 + 1) % 360;
+      falange2 = (falange2 + 5) % 360;
       glutPostRedisplay();
       break;
    case 'M':
-      falange2 = (falange2 - 1) % 360;
+      falange2 = (falange2 - 5) % 360;
       glutPostRedisplay();
       break;
    case 27:
