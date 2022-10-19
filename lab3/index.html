@@ -11,13 +11,9 @@
 
 <body>
     <h1>Relatório lab 3</h1>
-    <p>Relatório referente ao laboratório 3 realizado no dia 18/10/2022.</p>
+    <p>Relatório referente ao laboratório 3 realizado no dia 13/10/2022.</p>
 
     <table>
-        <tr>
-            <th>Nome</th>
-            <th>RA</th>
-        </tr>
         <tr>
             <th>Nome</th>
             <th>RA</th>
@@ -27,6 +23,14 @@
             <td>11109715</td>
         </tr>
         <tr>
+            <td>Ismael Trinca Junior</td>
+            <td>11131611</td>
+        </tr>
+        <tr>
+            <td>Rafael Branco Totino</td>
+            <td>11201922308</td>
+        </tr>
+        <tr>
             <td>Victor Luiz Gluz Romano</td>
             <td>11109915</td>
         </tr>
@@ -34,95 +38,100 @@
 
     <h2>Procedimentos realizados</h2>
 
-    <p>Primeiramente se executou alguns projetos, que foram disponibilizados no moodle, isso para se aprofundar alguns conceitos em openGL e de animação e
+    <p>Primeiramente se executou alguns projetos, que foram disponibilizados no moodle, isso para se aprofundar alguns
+        conceitos em openGL e de animação e
         iterativamente com os desenhos apresentados.</p>
+    <h3>Model.c</h3>
     <p>O primeiro programa executado foi o model.c o resultado é apresentado na imagem a seguir.</p>
 
-    <div> <--Colocar as informações da imagem-->
-        <a target="" href="">
-            <img src="" width="600" height="400">
+    <div class="gallery">
+        <a href="img/1-model.png">
+            <img src="img/1-model.png">
         </a>
 
     </div>
-    
+
     <p>Ao olhar o programa executado, observou-se que é carregada a matriz identidade, e ela é carregada porque...</p>
-    <--Responder porque a matriz identidade foi carregada-->
-    <p>Outra coisa que se observou são os valores dos argumentos das transformações realizadas. Elas são apresentadas a segui:<br></p>
-    <p>Tranlação: T(-20.0, 0.0, 0.0); <br></p>
-    <p>Escalonamento: S(1.5, 0.5, 1.0); <br></p>
-    <p>Rotação: T(90.0, 0.0, 0.0, 1.0); <br></p>
-        
+    <!--Responder porque a matriz identidade foi carregada-->
+    <p>Outra coisa que se observou são os valores dos argumentos das transformações realizadas. Elas são
+        apresentadas a seguir:</p>
+    <p>Tranlação: T(-20.0, 0.0, 0.0); </p>
+    <p>Escalonamento: S(1.5, 0.5, 1.0); </p>
+    <p>Rotação: T(90.0, 0.0, 0.0, 1.0); </p>
+
+    <h3>Double.c</h3>
     <p>O segundo programa executado foi o double.c o resultado é apresentado na imagem a seguir.</p>
 
-    <div> <--Colocar as informações da imagem-->
-        <a target="" href="">
-            <img src="" width="600" height="400">
-        </a>
+    <a href="img/2-double.gif">
+        <img src="img/2-double.gif"" width=" 600" height="400">
+    </a>
 
     </div>
-    
-    <p>Ao olhar o programa executado, observou-se que é feito a guarda da matriz na pilha, e isso é feito pois...</p>
-    <--Responder porque é feito a guarda da Matriz na Pilha-->
-    <p>Outra coisa que se observou é que é nesccessário o uso do mouse para iniciar e para a animação, e o ângulo de rotação em cada
-        apresentação é de 2 em 2 graus. Já a animação ocorre pois é feita uma função no programa, onde, na função, caso seja clicado o botão direito do mouse
-        é passada uma função nula e caso seja clicado o botão esquerdo do mouse é passado para o programa executar uma função que acrescenta de 2 em 2 graus
-        o ângulo de rotação do objeto, assim fazendo o objeto rotacionar.<br></p> <--melhor verificar se é mesmo esse ângulo e se expliquei certo a animação-->
 
-    <div class="">
-        <a target="" href="">
-            <img src="" width="600" height="400">
+    <p>Ao olhar o programa executado, observou-se que é feito a guarda da matriz na pilha, e isso é feito pois...
+    </p>
+    <!--Responder porque é feito a guarda da Matriz na Pilha-->
+    <p>Outra coisa que se observou é que é nesccessário o uso do mouse para iniciar e para a animação, e o
+        ângulo de rotação em cada
+        apresentação é de 2 em 2 graus. Já a animação ocorre pois é feita uma função no programa, onde, na
+        função, caso seja clicado o botão direito do mouse
+        é passada uma função nula e caso seja clicado o botão esquerdo do mouse é passado para o programa
+        executar uma função que acrescenta de 2 em 2 graus
+        o ângulo de rotação do objeto, assim fazendo o objeto rotacionar.<br></p>
+    <!--melhor verificar se é mesmo esse ângulo e se expliquei certo a animação-->
+
+    <h3>rotacao.c</h3>
+    <p>O terceiro programa executado foi o rotacao.c o resultado é apresentado na imagem a seguir.</p>
+    <div class="gallery">
+        <a href="img/3-rotacao.gif">
+            <img src="img/3-rotacao.gif">
         </a>
     </div>
+    <p>Ao olhar o programa executado, observou-se que, diferentemente do segundo programa executado, aqui não é feito a
+        guarda da matriz na pilha,
+        e isso é feito pois...</p>
+    <!--Responder porque não é feita a guarda da Matriz na Pilha-->
+    <p>Aqui observou-se que o valor do ângulo de rotação em cada apresentação é aumentado de 1 em 1 grau.</p>
+    <!--melhor verificar se é mesmo esse ângulo-->
 
-    <div class="">
-        <a target="" href="">
-            <img src="" width="600" height="400">
+    <h3>planet.c</h3>
+    <p>O quarto programa executado foi o planet.c o resultado é apresentado na imagem a seguir.</p>
+    <div class="gallery">
+        <a href="img/4-planet.gif">
+            <img src="img/4-planet.gif">
         </a>
     </div>
+    <p>Ao olhar o programa executado, observou-se que o Sol é e o Planeta . E para modificar a posição do planeta se
+        utiliza das teclas d, D, y e Y.</p>
+    <!--Colocar qual é o planeta e qual é o Sol, verificar se as teclas estão certas-->
+    <p>As transformações utilizadas para o movimento do planeta são duas rotações e uma translação. Onde as rotações
+        realizadas mudam dependendo do botão
+        utilizado ao se teclar d ou D a rotação é de 10 graus e ao se teclar y ou Y é de 5 graus.</p>
+    <!--melhor verificar se são mesmo esses-->
 
-    <div class="">
-        <a target="" href="">
-            <img src="" width="600" height="400">
+    <h3>robot.c</h3>
+    <p>O quinto programa executado foi o robot.c o resultado é apresentado na imagem a seguir.</p>
+    <div class="gallery">
+        <a href="img/5-robot.gif">
+            <img src="img/5-robot.gif">
         </a>
     </div>
-
-    <div class="">
-        <a target="" href="">
-            <img src="" width="600" height="400">
+    <h3>Bola de rugby</h3>
+    <div class="gallery">
+        <a href="img/bola_rugby.png">
+            <img src="img/bola_rugby.png">
         </a>
     </div>
-
-    <div class="">
-        <a target="" href="">
-            <img src="" width="600" height="400">
+    <h3>Flecha</h3>
+    <div class="gallery">
+        <a href="img/flecha.png">
+            <img src="img/flecha.png">
         </a>
     </div>
-
-    <div class="">
-        <a target="" href="">
-            <img src="" width="600" height="400">
-        </a>
-    </div>
-
-    <div class="">
-        <a target="" href="">
-            <img src="" width="600" height="400">
-        </a>
-    </div>
-
-    <p></p>
-
-    <div class="">
-        <a target="" href="">
-            <img src="" width="600" height="400">
-        </a>
-    </div>
-
-    <p></p>
-
-    <div class="">
-        <a target="" href="">
-            <img src="" width="600" height="400">
+    <h3>Animal</h3>
+    <div class="gallery">
+        <a href="img/animal.png">
+            <img src="img/animal.png">
         </a>
     </div>
 
@@ -131,19 +140,26 @@
     <h2>Exercícios para entregar</h2>
 
     <p></p>
-
-    <div class="">
-        <a target="" href="">
-            <img src="" width="600" height="400">
+    <h3>Braço robótico com dedos</h3>
+    <div class="gallery">
+        <a href="img/robo_ex.gif">
+            <img src="img/robo_ex.gif">
         </a>
     </div>
 
     <p></p>
-
-    <div class="">
-        <a target="" href="">
-            <img src="" width="600" height="400">
+    <h3>Composição de polígono</h3>
+    <h4>Parte 1</h4>
+    <div class="gallery">
+        <a href="img/ex2.png">
+            <img src="img/ex2.png"">
         </a>
+    </div>
+<h4>Parte 2</h4>
+    <div class=" gallery">
+            <a href="img/ex2.gif">
+                <img src="img/ex2.gif">
+            </a>
     </div>
 
     <hr>

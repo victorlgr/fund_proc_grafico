@@ -2,6 +2,14 @@
  *  model.c
  *  This program demonstrates modeling transformations
  *  Modificado em 10/11/2008 - UFABC
+ * 
+ * data 13/10/2022
+ * Cauê Montrose Bianchim, RA 11109715
+ * Ismael Trinca Junior, RA 11131611
+ * Rafael Branco Totino, RA 11201922308
+ * Victor Luiz Gluz Romano, RA 11109915
+ * 
+ * Compilar com "gcc -o flecha flecha.cpp -lglut -lGL -lGLU -lm" e executar com ./flecha
  */
 #include <GL/gl.h>
 #include <GL/glu.h>
