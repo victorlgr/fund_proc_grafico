@@ -79,7 +79,6 @@
             é passada uma função nula e caso seja clicado o botão esquerdo do mouse é passado para o programa
             executar uma função que acrescenta de 2 em 2 graus
             o ângulo de rotação do objeto, assim fazendo o objeto rotacionar.<br></p>
-        <!--melhor verificar se é mesmo esse ângulo e se expliquei certo a animação-->
 
         <h3>rotacao.c</h3>
         <p>O terceiro programa executado foi o rotacao.c o resultado é apresentado na imagem a seguir.</p>
@@ -91,7 +90,6 @@
         <p>Ao olhar o programa executado, observou-se que, diferentemente do segundo programa executado, aqui não é
             feito a guarda da matriz na pilha, e isso é feito pois não se quer guardar o estado.</p>
         <p>Aqui observou-se que o valor do ângulo de rotação em cada apresentação é aumentado de 1 em 1 grau.</p>
-        <!--melhor verificar se é mesmo esse ângulo-->
 
         <h3>planet.c</h3>
         <p>O quarto programa executado foi o planet.c o resultado é apresentado na imagem a seguir.</p>
@@ -100,13 +98,11 @@
                 <img src="img/4-planet.gif">
             </a>
         </div>
-        <p>Ao olhar o programa executado, observou-se que o Sol é e o Planeta . E para modificar a posição do planeta se
+        <p>Ao olhar o programa executado, observou-se que o Sol é o objeto maior e o Planeta é o objeto menor. E para modificar a posição do planeta se
             utiliza das teclas d, D, y e Y.</p>
-        <!--Colocar qual é o planeta e qual é o Sol, verificar se as teclas estão certas-->
         <p>As transformações utilizadas para o movimento do planeta são duas rotações e uma translação. Onde as rotações
-            realizadas mudam dependendo do botão
-            utilizado ao se teclar d ou D a rotação é de 10 graus e ao se teclar y ou Y é de 5 graus.</p>
-        <!--melhor verificar se são mesmo esses-->
+            realizadas mudam dependendo do botão,
+            utilizando a tecla d ou D a rotação é de 10 graus e ao se teclar y ou Y é de 5 graus.</p>
 
         <h3>robot.c</h3>
         <p>O quinto programa executado foi o robot.c o resultado é apresentado na imagem a seguir.</p>
@@ -118,8 +114,7 @@
 
         <p>Ao olhar o código vemos que a dimensão inicial do ombro e braço são dadas por: <br>S(2.0, 0.4, 1.0)<br>
             Também nota-se que temos o comando glPushMatrix()
-            e glPushMatrix() que são utilizados para...</p>
-        <!--Explicar os comandos faltantes-->
+            e glPopMatrix() que são utilizados para guardar o estado, adicionando-o na pilha e para recuperar o último estado puxando-o da pilha.</p>
 
         <h3>Bola de rugby</h3>
         <p>Neste exercício, o objetivo é a construção da trajetória percorrida por uma bola de rugby. Primeiramente,
