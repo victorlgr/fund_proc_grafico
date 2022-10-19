@@ -24,36 +24,10 @@ void init(void)
    glShadeModel(GL_FLAT);
 }
 
-void braco(void)
-{
-   glPushMatrix();
-   // glRotatef(15, 1.0, 0.0, 0.0);
-   // glRotatef(-45, 0.0, 1.0, 0.0);
-   // glRotatef(-15, 0.0, 0.0, 1.0);
-   glTranslatef(-1.0, 0.0, 0.0);
-
-   // Shoulder
-   glRotatef((GLfloat)shoulder, 0.0, 0.0, 1.0);
-   glTranslatef(1.0, 0.0, 0.0);
-   glPushMatrix();
-   glScalef(2.0, 0.4, 1.0);
-   glutWireCube(1.0);
-   glPopMatrix();
-   glTranslatef(1.0, 0.0, 0.0);
-
-   // Elbow
-   glRotatef((GLfloat)elbow, 0.0, 0.0, 1.0);
-   glTranslatef(1.0, 0.0, 0.0);
-   glPushMatrix();
-   glScalef(2.0, 0.4, 1.0);
-   glutWireCube(1.0);
-   glPopMatrix();
-}
-
 void display(void)
 {
    glClear(GL_COLOR_BUFFER_BIT);
-   // Draw shoulder
+
    glPushMatrix();
    glRotatef(15, 1.0, 0.0, 0.0);
    glRotatef(-75, 0.0, 1.0, 0.0);
@@ -65,7 +39,6 @@ void display(void)
    glutWireCube(1.0);
    glPopMatrix();
 
-   // Draw elbow
    glTranslatef(1.0, 0.0, 0.0);
    glRotatef((GLfloat)elbow, 0.0, 0.0, 1.0);
    glTranslatef(1.0, 0.0, 0.0);
@@ -74,7 +47,6 @@ void display(void)
    glutWireCube(1.0);
    glPopMatrix();
 
-   // Draw fingerBase 1
    glPushMatrix();
    glTranslatef(1.0, 0.25, 0.0);
    glRotatef(-(GLfloat)falange1, 0.0, 0.0, 1.0);
@@ -84,7 +56,6 @@ void display(void)
    glutWireCube(1);
    glPopMatrix();
 
-   // Draw fingerUp 1
    glTranslatef(0.15, 0.0, 0.0);
    glRotatef(-(GLfloat)falange2, 0.0, 0.0, 1.0);
    glTranslatef(0.15, 0.0, 0.0);
@@ -95,7 +66,6 @@ void display(void)
 
    glPopMatrix();
 
-   // Draw fingerBase 2
    glPushMatrix();
    glTranslatef(1.0, 0.25, 0.0);
    glRotatef(-(GLfloat)falange1, 0.0, 0.0, 1.0);
@@ -105,7 +75,6 @@ void display(void)
    glutWireCube(1);
    glPopMatrix();
 
-   // Draw fingerUp 2
    glTranslatef(0.15, 0.0, 0.0);
    glRotatef(-(GLfloat)falange2, 0.0, 0.0, 1.0);
    glTranslatef(0.15, 0.0, 0.0);
@@ -116,7 +85,6 @@ void display(void)
 
    glPopMatrix();
 
-   // Draw fingerBase 3
    glPushMatrix();
    glTranslatef(1.0, 0.25, 0.0);
    glRotatef(-(GLfloat)falange1, 0.0, 0.0, 1.0);
@@ -126,7 +94,6 @@ void display(void)
    glutWireCube(1);
    glPopMatrix();
 
-   // Draw fingerUp 3
    glTranslatef(0.15, 0.0, 0.0);
    glRotatef(-(GLfloat)falange2, 0.0, 0.0, 1.0);
    glTranslatef(0.15, 0.0, 0.0);
@@ -137,7 +104,6 @@ void display(void)
 
    glPopMatrix();
 
-   // Draw fingerBase 4 (Thumb)
    glPushMatrix();
    glTranslatef(1.0, -0.25, 0.0);
    glRotatef((GLfloat)falange1, 0.0, 0.0, 1.0);
@@ -147,7 +113,6 @@ void display(void)
    glutWireCube(1);
    glPopMatrix();
 
-   // Draw fingerUp 4
    glTranslatef(0.15, 0.0, 0.0);
    glRotatef((GLfloat)falange2, 0.0, 0.0, 1.0);
    glTranslatef(0.15, 0.0, 0.0);
