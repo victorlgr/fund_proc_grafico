@@ -1,179 +1,211 @@
 <!DOCTYPE html>
 <html lang="pt">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Lab 3</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>Lab 3</title>
+    </head>
 
-<body>
-    <h1>Relatório lab 3</h1>
-    <p>Relatório referente ao laboratório 3 realizado no dia 13/10/2022.</p>
+    <body>
+        <h1>Relatório lab 3</h1>
+        <p>Relatório referente ao laboratório 3 realizado no dia 13/10/2022.</p>
 
-    <table>
-        <tr>
-            <th>Nome</th>
-            <th>RA</th>
-        </tr>
-        <tr>
-            <td>Cauê Montrose Bianchim</td>
-            <td>11109715</td>
-        </tr>
-        <tr>
-            <td>Ismael Trinca Junior</td>
-            <td>11131611</td>
-        </tr>
-        <tr>
-            <td>Rafael Branco Totino</td>
-            <td>11201922308</td>
-        </tr>
-        <tr>
-            <td>Victor Luiz Gluz Romano</td>
-            <td>11109915</td>
-        </tr>
-    </table>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>RA</th>
+            </tr>
+            <tr>
+                <td>Cauê Montrose Bianchim</td>
+                <td>11109715</td>
+            </tr>
+            <tr>
+                <td>Ismael Trinca Junior</td>
+                <td>11131611</td>
+            </tr>
+            <tr>
+                <td>Rafael Branco Totino</td>
+                <td>11201922308</td>
+            </tr>
+            <tr>
+                <td>Victor Luiz Gluz Romano</td>
+                <td>11109915</td>
+            </tr>
+        </table>
 
-    <h2>Procedimentos realizados</h2>
+        <h2>Procedimentos realizados</h2>
 
-    <p>Primeiramente se executou alguns projetos, que foram disponibilizados no moodle, isso para se aprofundar alguns
-        conceitos em openGL e de animação e
-        iterativamente com os desenhos apresentados.</p>
-    <h3>Model.c</h3>
-    <p>O primeiro programa executado foi o model.c o resultado é apresentado na imagem a seguir.</p>
+        <p>Primeiramente se executou alguns projetos, que foram disponibilizados no moodle, isso para se aprofundar
+            alguns
+            conceitos em openGL e de animação e
+            iterativamente com os desenhos apresentados.</p>
+        <h3>Model.c</h3>
+        <p>O primeiro programa executado foi o model.c o resultado é apresentado na imagem a seguir.</p>
 
-    <div class="gallery">
-        <a href="img/1-model.png">
-            <img src="img/1-model.png">
+        <div class="gallery">
+            <a href="img/1-model.png">
+                <img src="img/1-model.png">
+            </a>
+
+        </div>
+
+        <p>Ao olhar o programa executado, observou-se que é carregada a matriz identidade, e ela é carregada porque...
+        </p>
+        <!--Responder porque a matriz identidade foi carregada-->
+        <p>Outra coisa que se observou são os valores dos argumentos das transformações realizadas. Elas são
+            apresentadas a seguir:</p>
+        <p>Tranlação: T(-20.0, 0.0, 0.0); </p>
+        <p>Escalonamento: S(1.5, 0.5, 1.0); </p>
+        <p>Rotação: T(90.0, 0.0, 0.0, 1.0); </p>
+
+        <h3>Double.c</h3>
+        <p>O segundo programa executado foi o double.c o resultado é apresentado na imagem a seguir.</p>
+
+        <a href="img/2-double.gif">
+            <img src="img/2-double.gif"" width=" 600" height="400">
         </a>
 
-    </div>
+        </div>
 
-    <p>Ao olhar o programa executado, observou-se que é carregada a matriz identidade, e ela é carregada porque...</p>
-    <!--Responder porque a matriz identidade foi carregada-->
-    <p>Outra coisa que se observou são os valores dos argumentos das transformações realizadas. Elas são
-        apresentadas a seguir:</p>
-    <p>Tranlação: T(-20.0, 0.0, 0.0); </p>
-    <p>Escalonamento: S(1.5, 0.5, 1.0); </p>
-    <p>Rotação: T(90.0, 0.0, 0.0, 1.0); </p>
+        <p>Ao olhar o programa executado, observou-se que é feito a guarda da matriz na pilha, e isso é feito pois...
+        </p>
+        <!--Responder porque é feito a guarda da Matriz na Pilha-->
+        <p>Outra coisa que se observou é que é nesccessário o uso do mouse para iniciar e para a animação, e o
+            ângulo de rotação em cada
+            apresentação é de 2 em 2 graus. Já a animação ocorre pois é feita uma função no programa, onde, na
+            função, caso seja clicado o botão direito do mouse
+            é passada uma função nula e caso seja clicado o botão esquerdo do mouse é passado para o programa
+            executar uma função que acrescenta de 2 em 2 graus
+            o ângulo de rotação do objeto, assim fazendo o objeto rotacionar.<br></p>
+        <!--melhor verificar se é mesmo esse ângulo e se expliquei certo a animação-->
 
-    <h3>Double.c</h3>
-    <p>O segundo programa executado foi o double.c o resultado é apresentado na imagem a seguir.</p>
+        <h3>rotacao.c</h3>
+        <p>O terceiro programa executado foi o rotacao.c o resultado é apresentado na imagem a seguir.</p>
+        <div class="gallery">
+            <a href="img/3-rotacao.gif">
+                <img src="img/3-rotacao.gif">
+            </a>
+        </div>
+        <p>Ao olhar o programa executado, observou-se que, diferentemente do segundo programa executado, aqui não é
+            feito a
+            guarda da matriz na pilha,
+            e isso é feito pois...</p>
+        <!--Responder porque não é feita a guarda da Matriz na Pilha-->
+        <p>Aqui observou-se que o valor do ângulo de rotação em cada apresentação é aumentado de 1 em 1 grau.</p>
+        <!--melhor verificar se é mesmo esse ângulo-->
 
-    <a href="img/2-double.gif">
-        <img src="img/2-double.gif"" width=" 600" height="400">
-    </a>
+        <h3>planet.c</h3>
+        <p>O quarto programa executado foi o planet.c o resultado é apresentado na imagem a seguir.</p>
+        <div class="gallery">
+            <a href="img/4-planet.gif">
+                <img src="img/4-planet.gif">
+            </a>
+        </div>
+        <p>Ao olhar o programa executado, observou-se que o Sol é e o Planeta . E para modificar a posição do planeta se
+            utiliza das teclas d, D, y e Y.</p>
+        <!--Colocar qual é o planeta e qual é o Sol, verificar se as teclas estão certas-->
+        <p>As transformações utilizadas para o movimento do planeta são duas rotações e uma translação. Onde as rotações
+            realizadas mudam dependendo do botão
+            utilizado ao se teclar d ou D a rotação é de 10 graus e ao se teclar y ou Y é de 5 graus.</p>
+        <!--melhor verificar se são mesmo esses-->
 
-    </div>
+        <h3>robot.c</h3>
+        <p>O quinto programa executado foi o robot.c o resultado é apresentado na imagem a seguir.</p>
+        <div class="gallery">
+            <a href="img/5-robot.gif">
+                <img src="img/5-robot.gif">
+            </a>
+        </div>
 
-    <p>Ao olhar o programa executado, observou-se que é feito a guarda da matriz na pilha, e isso é feito pois...
-    </p>
-    <!--Responder porque é feito a guarda da Matriz na Pilha-->
-    <p>Outra coisa que se observou é que é nesccessário o uso do mouse para iniciar e para a animação, e o
-        ângulo de rotação em cada
-        apresentação é de 2 em 2 graus. Já a animação ocorre pois é feita uma função no programa, onde, na
-        função, caso seja clicado o botão direito do mouse
-        é passada uma função nula e caso seja clicado o botão esquerdo do mouse é passado para o programa
-        executar uma função que acrescenta de 2 em 2 graus
-        o ângulo de rotação do objeto, assim fazendo o objeto rotacionar.<br></p>
-    <!--melhor verificar se é mesmo esse ângulo e se expliquei certo a animação-->
+        <p>Ao olhar o código vemos que a dimensão inicial do ombro e braço são dadas por: <br>S(2.0, 0.4, 1.0)<br>
+            Também nota-se que temos o comando glPushMatrix()
+            e glPushMatrix() que são utilizados para...</p>
+        <!--Explicar os comandos faltantes-->
 
-    <h3>rotacao.c</h3>
-    <p>O terceiro programa executado foi o rotacao.c o resultado é apresentado na imagem a seguir.</p>
-    <div class="gallery">
-        <a href="img/3-rotacao.gif">
-            <img src="img/3-rotacao.gif">
-        </a>
-    </div>
-    <p>Ao olhar o programa executado, observou-se que, diferentemente do segundo programa executado, aqui não é feito a
-        guarda da matriz na pilha,
-        e isso é feito pois...</p>
-    <!--Responder porque não é feita a guarda da Matriz na Pilha-->
-    <p>Aqui observou-se que o valor do ângulo de rotação em cada apresentação é aumentado de 1 em 1 grau.</p>
-    <!--melhor verificar se é mesmo esse ângulo-->
+        <h3>Bola de rugby</h3>
+        <p>Neste exercício, o objetivo é a construção da trajetória percorrida por uma bola de rugby. Primeiramente,
+            cria-se uma função para desenhar a bola, usando o mesmo conceito de desenho de um círculo, mas neste caso
+            com o raio de y sendo o dobro do raio de x. Em seguida, cria-se um loop que irá, a medida que o contador
+            aumenta, translacionar e rotacionar a bola para cima e para a direita. Essa translação para cima reduz a
+            intensidade com o aumento do contador. Após isso, um outro loop irá translacionar e rotacionar a bola
+            novamente, mas desta vez para baixo e para a direita. O resultado é observado abaixo:</p>
+        <div class="gallery">
+            <a href="img/bola_rugby.png">
+                <img src="img/bola_rugby.png">
+            </a>
+        </div>
+        <h3>Flecha</h3>
+        <p>Neste exercício, o objetivo é a construção de uma flecha. Sua construção é relativamente simples, sendo
+            apenas um retângulo amarelo com o lado superior levemente curvado e um triângulo vermelho que foi
+            translacionado para que encaixa-se no lado inferior do retângulo. O resultado é observado abaixo:</p>
+        <div class="gallery">
+            <a href="img/flecha.png">
+                <img src="img/flecha.png">
+            </a>
+        </div>
+        <h3>Animal</h3>
+        <p>Neste exercício, o objetivo é a construção aproximada da cabeça de animal apresentada no roteiro. Foram
+            criadas funções para desenhar a cabeça, olhos e orelhas, e então foram rotacionadas, transladadas ou ambas.
+            O resultado é observado abaixo:</p>
+        <div class="gallery">
+            <a href="img/animal.png">
+                <img src="img/animal.png">
+            </a>
+        </div>
 
-    <h3>planet.c</h3>
-    <p>O quarto programa executado foi o planet.c o resultado é apresentado na imagem a seguir.</p>
-    <div class="gallery">
-        <a href="img/4-planet.gif">
-            <img src="img/4-planet.gif">
-        </a>
-    </div>
-    <p>Ao olhar o programa executado, observou-se que o Sol é e o Planeta . E para modificar a posição do planeta se
-        utiliza das teclas d, D, y e Y.</p>
-    <!--Colocar qual é o planeta e qual é o Sol, verificar se as teclas estão certas-->
-    <p>As transformações utilizadas para o movimento do planeta são duas rotações e uma translação. Onde as rotações
-        realizadas mudam dependendo do botão
-        utilizado ao se teclar d ou D a rotação é de 10 graus e ao se teclar y ou Y é de 5 graus.</p>
-    <!--melhor verificar se são mesmo esses-->
+        <hr>
 
-    <h3>robot.c</h3>
-    <p>O quinto programa executado foi o robot.c o resultado é apresentado na imagem a seguir.</p>
-    <div class="gallery">
-        <a href="img/5-robot.gif">
-            <img src="img/5-robot.gif">
-        </a>
-    </div>
-                                      
-    <p>Ao olhar o código vemos que a dimensão inicial do ombro e braço são dadas por: <br>S(2.0, 0.4, 1.0)<br> Também nota-se que temos o comando glPushMatrix()
-                                      e glPushMatrix() que são utilizados para...</p> <!--Explicar os comandos faltantes-->
-                                      
-    <h3>Bola de rugby</h3>
-    <div class="gallery">
-        <a href="img/bola_rugby.png">
-            <img src="img/bola_rugby.png">
-        </a>
-    </div>
-    <h3>Flecha</h3>
-    <div class="gallery">
-        <a href="img/flecha.png">
-            <img src="img/flecha.png">
-        </a>
-    </div>
-    <h3>Animal</h3>
-    <div class="gallery">
-        <a href="img/animal.png">
-            <img src="img/animal.png">
-        </a>
-    </div>
+        <h2>Exercícios para entregar</h2>
 
-    <hr>
+        <p></p>
+        <h3>Braço robótico com dedos</h3>
+        <p>Neste exercício, adaptou-se o código disponibilizado <code>robot.c</code> para incluir no mesmo dedos
+            articulados. Os dedos foram construídos da mesma forma que o braço, apenas gerando duas novas variáveis para
+            cada falange e usando o <code>glScalef()</code> para reduzir o tamanho das formas geradas. Adicionalmente
+            aos comandos <strong>e</strong> para controlar o cotovelo e <strong>s</strong> para controlar o ombro,
+            utilizou-se <strong>n</strong> para controlar a falange 1 e <strong>m</strong> para controlar a falange 2,
+            com as letras capitalizadas também fazendo a ação oposta como no programa base.
+            O resultado é observado abaixo:
+        </p>
+        <div class="gallery">
+            <a href="img/robo_ex.gif">
+                <img src="img/robo_ex.gif">
+            </a>
+        </div>
 
-    <h2>Exercícios para entregar</h2>
-
-    <p></p>
-    <h3>Braço robótico com dedos</h3>
-    <div class="gallery">
-        <a href="img/robo_ex.gif">
-            <img src="img/robo_ex.gif">
-        </a>
-    </div>
-
-    <p></p>
-    <h3>Composição de polígono</h3>
-    <h4>Parte 1</h4>
-    <div class="gallery">
-        <a href="img/ex2.png">
-            <img src="img/ex2.png"">
-        </a>
-    </div>
-<h4>Parte 2</h4>
-    <div class=" gallery">
+        <p></p>
+        <h3>Composição de polígono</h3>
+        <h4>Parte 1</h4>
+        <p>Neste exercício de composição de polígono, realizou-se a construção dos triângulos conforme vértices
+            definidos na imagem b. O resultado pode ser observado abaixo:</p>
+        <div class="gallery">
+            <a href="img/ex2.png">
+                <img src="img/ex2.png">
+            </a>
+        </div>
+        <h4>Parte 2</h4>
+        <p>Na segunda parte deste exercício, acrescentou-se no código anterior os trechos referentes a rotação com o
+            clique do mouse do código <code>double.cpp</code> e a mudança de cor com teclas do teclado do código
+            <code>rotacao.cpp</code>. O polígono possui cor padrão branco, e muda para azul com a tecla F1, para amarelo
+            com a tecla F2, para vermelho com a tecla F3 e de volta para branco com a tecla F4.
+        </p>
+        <div class=" gallery">
             <a href="img/ex2.gif">
                 <img src="img/ex2.gif">
             </a>
-    </div>
+        </div>
 
-    <hr>
+        <hr>
 
-    <h2>Análises e conclusões</h2>
+        <h2>Análises e conclusões</h2>
 
-    <p></p>
-    <p></p>
-    <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
 
-</body>
+    </body>
 
 </html>

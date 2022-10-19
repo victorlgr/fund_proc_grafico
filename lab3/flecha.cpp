@@ -23,20 +23,6 @@ void init(void)
    glShadeModel(GL_FLAT);
 }
 
-void draw_bola(void)
-{
-   glColor3f(1.0, 1.0, 0.0);
-   glBegin(GL_POLYGON);
-   for (GLfloat i = 0; i < 360; i++)
-   {
-      float x = cos(i * M_PI / 180.f) * 10; // keep the axes radius same
-      float y = sin(i * M_PI / 180.f) * 20;
-      glVertex2f(x, y);
-   }
-
-   glEnd();
-}
-
 void draw_cilindro(void)
 {
    glBegin(GL_POLYGON);
