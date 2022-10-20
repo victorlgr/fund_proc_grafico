@@ -52,14 +52,14 @@
 
         </div>
 
-        <p>Ao olhar o programa executado, observou-se que é carregada a matriz identidade, e acredita-se que ela é carregada pois, por ela ser "base" para fazer
-            uma rotação ou uma translação ou um escalonamento, se faz necessário o carregamento dela.
+        <p>Ao olhar o programa executado, observou-se que é carregada a matriz identidade, e ela é
+            carregada por ser "base" para fazer uma rotação ou uma translação ou um escalonamento.
         </p>
         <p>Outra coisa que se observou são os valores dos argumentos das transformações realizadas. Elas são
             apresentadas a seguir:</p>
-        <p>Tranlação: T(-20.0, 0.0, 0.0); </p>
-        <p>Escalonamento: S(1.5, 0.5, 1.0); </p>
-        <p>Rotação: T(90.0, 0.0, 0.0, 1.0); </p>
+        <p><code>Translação: T(-20.0, 0.0, 0.0);</code>T</p>
+        <p><code>Escalonamento: S(1.5, 0.5, 1.0);</code>T</p>
+        <p><code>Rotação: T(90.0, 0.0, 0.0, 1.0);</code>T</p>
 
         <h3>Double.c</h3>
         <p>O segundo programa executado foi o double.c o resultado é apresentado na imagem a seguir.</p>
@@ -70,7 +70,8 @@
 
         </div>
 
-        <p>Ao olhar o programa executado, observou-se que é feito a guarda da matriz na pilha, e isso é feito pois se quer guardar o estado.
+        <p>Ao olhar o programa executado, observou-se que é feito a guarda da matriz na pilha, e isso é feito pois se
+            quer guardar o estado.
         </p>
         <p>Outra coisa que se observou é que é nesccessário o uso do mouse para iniciar e para a animação, e o
             ângulo de rotação em cada
@@ -98,7 +99,8 @@
                 <img src="img/4-planet.gif">
             </a>
         </div>
-        <p>Ao olhar o programa executado, observou-se que o Sol é o objeto maior e o Planeta é o objeto menor. E para modificar a posição do planeta se
+        <p>Ao olhar o programa executado, observou-se que o Sol é o objeto maior e o Planeta é o objeto menor. E para
+            modificar a posição do planeta se
             utiliza das teclas d, D, y e Y.</p>
         <p>As transformações utilizadas para o movimento do planeta são duas rotações e uma translação. Onde as rotações
             realizadas mudam dependendo do botão,
@@ -112,11 +114,15 @@
             </a>
         </div>
 
-        <p>Ao olhar o código vemos que a dimensão inicial do ombro e braço são dadas por: <br>S(2.0, 0.4, 1.0)<br>
+        <p>Ao olhar o código vemos que a dimensão inicial do ombro e braço são dadas por:
+            <br><code>S(2.0, 0.4, 1.0)</code><br>
             Também nota-se que temos o comando glPushMatrix()
-            e glPopMatrix() que são utilizados para guardar o estado, adicionando-o na pilha e para recuperar o último estado puxando-o da pilha.</p>
-        <p> Para uma melhor representação de como é feito o objeto através do programa, a seguir é mostrado um grafo de cena</p>
-                                          
+            e glPopMatrix() que são utilizados para guardar o estado, adicionando-o na pilha e para recuperar o último
+            estado puxando-o da pilha.
+        </p>
+        <p> Para uma melhor representação de como é feito o objeto através do programa, a seguir é mostrado um grafo de
+            cena</p>
+
         <div class="gallery">
             <a href="img/grafo_cena.jpeg">
                 <img src="img/grafo_cena.jpeg">
@@ -201,9 +207,11 @@
         <h2>Análises e conclusões</h2>
 
         <p>Ao realizar o laboratório foi possível praticar e aprofundar os fundamentos de modelamento de
-        objetos e de transformações, utilizando a linguagem C++ e a biblioteca OpenGL.</p>
-        <p>Um outro ponto a se destacar é que foi possível notar que o OpenGL não consegue desenhar formas geométricas complexas, assim quando se quer desenhá-las
-        se faz necessário dividir a imagem em formas mais simples, como um triângulo por exemplo, pois só assim se conseguirá desenhar a forma complexa requerida.</p>
+            objetos e de transformações, utilizando a linguagem C++ e a biblioteca OpenGL.</p>
+        <p>Um outro ponto a se destacar é que foi possível notar que o OpenGL não consegue desenhar formas geométricas
+            complexas, assim quando se quer desenhá-las
+            se faz necessário dividir a imagem em formas mais simples, como um triângulo por exemplo, pois só assim se
+            conseguirá desenhar a forma complexa requerida.</p>
         <p></p>
 
     </body>
