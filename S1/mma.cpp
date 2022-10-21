@@ -2,132 +2,205 @@
  *  model.c
  *  This program demonstrates modeling transformations
  *  Modificado em 10/11/2008 - UFABC
-*/
+ */
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
 #include <stdlib.h>
+#include <cmath>
 
-void init(void) 
+float posicao = 0, dx = 0;
+int estado = 1;
+
+void init(void)
 {
-   glClearColor (0.0, 0.0, 0.0, 0.0);
-   glShadeModel (GL_FLAT);
+   glClearColor(0.0, 0.0, 0.0, 0.0);
+   glShadeModel(GL_FLAT);
+}
+
+void draw_parede(void)
+{
+   glBegin(GL_LINE_STRIP);
+   glVertex2f(0.0, 80.0);
+   glVertex2f(0.0, 0.0);
+   glVertex2f(100.0, 0.0);
+   glEnd();
+}
+
+void draw_roda(void)
+{
+   GLdouble PI = 3.1415926535897;
+   GLint circle_points = 100;
+   GLfloat angle;
+   glBegin(GL_LINE_LOOP);
+   for (GLint i = 0; i < circle_points; i++)
+   {
+      angle = 2 * PI * i / circle_points;
+      glVertex2f(1.8 * cos(angle), 1.8 * sin(angle));
+   }
+   glEnd();
 }
 
 void draw_massa(void)
 {
-   glBegin (GL_POLYGON);
+   // Massa
+   glBegin(GL_POLYGON);
    glVertex2f(0.0, 0.0);
    glVertex2f(0.0, 25.0);
    glVertex2f(25.0, 25.0);
    glVertex2f(25.0, 0.0);
    glEnd();
+
+   // Roda
+   glTranslatef(5, -2, 0);
+   draw_roda();
+   glTranslatef(15, 0, 0);
+   draw_roda();
 }
 
 void draw_mola(int comprimento, double x)
 {
-   int y = 5;
-   glBegin (GL_LINE_STRIP);
+   int y = 3;
+   glBegin(GL_LINE_STRIP);
    glVertex2f(0.0, 0.0);
-   for(int i = 1; i < comprimento; i++){
-      if(i % 2 == 0)
-         y = -5;
+   for (int i = 1; i < comprimento; i++)
+   {
+      if (i % 2 == 0)
+         y = -3;
       else
-         y = 5;
-      glVertex2f(x*i,y);
+         y = 3;
+      glVertex2f(x * i, y);
    }
-   glVertex2f(x*comprimento, 0);
+   glVertex2f(x * comprimento, 0);
    glEnd();
 }
 
 void draw_amortecedor(double x)
 {
+   // Suporte
    glRotatef(90, 0, 0, 1);
-   glBegin (GL_LINE_STRIP);
-   glVertex2f(0,0);
+   glBegin(GL_LINE_STRIP);
+   glVertex2f(0, 10);
    glVertex2f(0, -5);
-   glVertex2f(-7, -5);
-   glVertex2f(-7, -19);
-   glVertex2f(-6, -19);
-   glVertex2f(-6, -6);
-   glVertex2f(7, -6);
-   glVertex2f(7, -19);
-   glVertex2f(8, -19);
-   glVertex2f(8, -5);
+   glVertex2f(-4, -5);
+   glVertex2f(-4, -19);
+   glVertex2f(-3, -19);
+   glVertex2f(-3, -6);
+   glVertex2f(4, -6);
+   glVertex2f(4, -19);
+   glVertex2f(5, -19);
+   glVertex2f(5, -5);
    glVertex2f(1, -5);
-   glVertex2f(1, 0);
+   glVertex2f(1, 10);
    glEnd();
 
-   glLoadIdentity();
-   glTranslatef(0, -30, 0);
-   glTranslatef(x, -9, 0);
-   glRotatef(-90, 0, 0, 1);
-   glBegin (GL_LINE_STRIP);
-   glVertex2f(0,0);
+   // Pistão
+   glTranslatef(-9, -19, 0);
+   glTranslatef(10, x, 0);
+   glRotatef(-180, 0, 0, 1);
+   glBegin(GL_LINE_STRIP);
+   glVertex2f(0, 11);
    glVertex2f(0, -5);
-   glVertex2f(-6, -5);
-   glVertex2f(-6, -6);
-   glVertex2f(7, -6);
-   glVertex2f(7,-5);
-   glVertex2f(1,-5);
-   glVertex2f(1,0);
+   glVertex2f(-3, -5);
+   glVertex2f(-3, -6);
+   glVertex2f(4, -6);
+   glVertex2f(4, -5);
+   glVertex2f(1, -5);
+   glVertex2f(1, 11);
    glEnd();
-
-
 }
 
 void display(void)
 {
-   glClear (GL_COLOR_BUFFER_BIT);
+   glClear(GL_COLOR_BUFFER_BIT);
 
-   glLoadIdentity ();
-   glTranslatef(-10, -10, 0);
-   glColor3f (1.0, 1.0, 1.0);
-   draw_massa ();
-   glLoadIdentity ();
-   glTranslatef(-10, -25, 0);
-   draw_mola(10,5);
-   glLoadIdentity ();
-   glTranslatef(-10, -40, 0);
-   draw_amortecedor(10);
+   glColor3f(1.0, 1.0, 1.0);
 
-   glFlush ();
+   glLoadIdentity();
+   glTranslatef(-40, -40, 0);
+   draw_parede();
+
+   glLoadIdentity();
+   glTranslatef(posicao, -36, 0);
+   draw_massa();
+
+   glLoadIdentity();
+   glTranslatef(-40, -15, 0);
+   draw_mola(20, 2.0+posicao/20);
+
+   glLoadIdentity();
+   glTranslatef(-30, -30, 0);
+   draw_amortecedor(-posicao);
+
+   glutSwapBuffers();
 }
 
-void reshape (int w, int h)
+void reshape(int w, int h)
 {
-   glViewport (0, 0, (GLsizei) w, (GLsizei) h);
-   glMatrixMode (GL_PROJECTION);
-   glLoadIdentity ();
+   glViewport(0, 0, (GLsizei)w, (GLsizei)h);
+   glMatrixMode(GL_PROJECTION);
+   glLoadIdentity();
    if (w <= h)
-      glOrtho (-50.0, 50.0, -50.0*(GLfloat)h/(GLfloat)w,
-         50.0*(GLfloat)h/(GLfloat)w, -1.0, 1.0);
+      glOrtho(-50.0, 50.0, -50.0 * (GLfloat)h / (GLfloat)w,
+              50.0 * (GLfloat)h / (GLfloat)w, -1.0, 1.0);
    else
-      glOrtho (-50.0*(GLfloat)w/(GLfloat)h,
-         50.0*(GLfloat)w/(GLfloat)h, -50.0, 50.0, -1.0, 1.0);
+      glOrtho(-50.0 * (GLfloat)w / (GLfloat)h,
+              50.0 * (GLfloat)w / (GLfloat)h, -50.0, 50.0, -1.0, 1.0);
    glMatrixMode(GL_MODELVIEW);
 }
 
 void keyboard(unsigned char key, int x, int y)
 {
-   switch (key) {
-      case 27:
-         exit(0);
-         break;
+   switch (key)
+   {
+   case 27:
+      exit(0);
+      break;
    }
 }
 
-int main(int argc, char** argv)
+void timer(int)
+{
+   glutPostRedisplay();
+   glutTimerFunc(1000 / 60, timer, 0);
+
+   switch (estado)
+   {
+   case 1:
+      if (posicao < 5)
+      {
+         posicao += 0.1;
+      }
+      else
+      {
+         estado = -1;
+      }
+      break;
+   case -1:
+      if (posicao > -5)
+      {
+         posicao -= 0.1;
+      }
+      else
+      {
+         estado = 1;
+      }
+      break;
+   }
+}
+
+int main(int argc, char **argv)
 {
    glutInit(&argc, argv);
-   glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
-   glutInitWindowSize (500, 500); 
-   glutInitWindowPosition (100, 100);
-   glutCreateWindow ("model.c");
-   init ();
-   glutDisplayFunc(display); 
+   glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+   glutInitWindowSize(500, 500);
+   glutInitWindowPosition(100, 100);
+   glutCreateWindow("model.c");
+   init();
+   glutDisplayFunc(display);
    glutReshapeFunc(reshape);
-   glutKeyboardFunc (keyboard);
+   glutKeyboardFunc(keyboard);
+   glutTimerFunc(1000, timer, 0);
    glutMainLoop();
    return 0;
 }
