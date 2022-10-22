@@ -1,21 +1,29 @@
 /*
- *  model.c
- *  This program demonstrates modeling transformations
- *  Modificado em 10/11/2008 - UFABC
+ *
+ *  gcc -o mma mma.cpp -lglut -lGL -lGLU -lm && ./mma
  */
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
 #include <stdlib.h>
+#include <cstdio>
 #include <cmath>
+#include<unistd.h>
 
-float posicao = 0, dx = 0;
+double posicao = 0;
 int estado = 1;
+float massa = 2, constante_amortecedor = 2, constante_mola = 2, forca = 2;
+double tempo = 0;
 
 void init(void)
 {
    glClearColor(0.0, 0.0, 0.0, 0.0);
    glShadeModel(GL_FLAT);
+}
+
+double funcao_x_t(double tempo)
+{
+   return exp(-2*tempo)*(5*cos(7*tempo) - 1.1429*sin(7*tempo));
 }
 
 void draw_parede(void)
@@ -126,7 +134,7 @@ void display(void)
 
    glLoadIdentity();
    glTranslatef(-40, -15, 0);
-   draw_mola(20, 2.0+posicao/20);
+   draw_mola(20, 2.0 + posicao / 20);
 
    glLoadIdentity();
    glTranslatef(-30, -30, 0);
@@ -161,32 +169,36 @@ void keyboard(unsigned char key, int x, int y)
 
 void timer(int)
 {
+   tempo += 1000 / 60;
    glutPostRedisplay();
    glutTimerFunc(1000 / 60, timer, 0);
+   double x_t = funcao_x_t(tempo/1000);
+   posicao = x_t;
+   // printf("Tempo: %f, x(t): %f\n", tempo/1000, x_t);
 
-   switch (estado)
-   {
-   case 1:
-      if (posicao < 5)
-      {
-         posicao += 0.1;
-      }
-      else
-      {
-         estado = -1;
-      }
-      break;
-   case -1:
-      if (posicao > -5)
-      {
-         posicao -= 0.1;
-      }
-      else
-      {
-         estado = 1;
-      }
-      break;
-   }
+   // switch (estado)
+   // {
+   // case 1:
+   //    if (posicao < 5)
+   //    {
+   //       posicao += 0.1;
+   //    }
+   //    else
+   //    {
+   //       estado = -1;
+   //    }
+   //    break;
+   // case -1:
+   //    if (posicao > -5)
+   //    {
+   //       posicao -= 0.1;
+   //    }
+   //    else
+   //    {
+   //       estado = 1;
+   //    }
+   //    break;
+   // }
 }
 
 int main(int argc, char **argv)
@@ -197,6 +209,7 @@ int main(int argc, char **argv)
    glutInitWindowPosition(100, 100);
    glutCreateWindow("model.c");
    init();
+   sleep(5);
    glutDisplayFunc(display);
    glutReshapeFunc(reshape);
    glutKeyboardFunc(keyboard);
