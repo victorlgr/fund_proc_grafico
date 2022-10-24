@@ -1,6 +1,11 @@
 /*
- *
- *  gcc -o mma mma.cpp -lglut -lGL -lGLU -lm && ./mma
+ * Seminário 1 - Grupo MMA
+ * Cauê Montrose Bianchim, RA 11109715
+ * Ismael Trinca Junior, RA 11131611
+ * Rafael Branco Totino, RA 11201922308
+ * Victor Luiz Gluz Romano, RA 11109915
+ * Compilar o programa com gcc -o mma mma.cpp -lglut -lGL -lGLU -lm e executar com ./mma X, sendo X a opção desejada (1, 2, 3)
+ * 
  */
 #include <GL/gl.h>
 #include <GL/glu.h>
@@ -11,11 +16,8 @@
 #include <unistd.h>
 #include <stdio.h>
 
-double posicao = 0;
-int estado = 1;
-float massa = 2, constante_amortecedor = 2, constante_mola = 2, forca = 2;
-double tempo = 0;
-int escolha = 0;
+double posicao = 0, tempo = 0;
+int estado = 1, escolha = 0;
 
 void init(void)
 {
@@ -25,11 +27,6 @@ void init(void)
 
 double funcao_x_t(double tempo)
 {
-   if (escolha == 0)
-   {
-      printf("Escolha a opção desejada: ");
-      scanf("%d", &escolha);
-   }
    if (escolha == 1)
       return 1 * exp(-2 * tempo) * cos(10 * tempo) + 3 * exp(-2 * tempo) * sin(10 * tempo);
    else if (escolha == 2)
@@ -117,8 +114,8 @@ void draw_amortecedor(double x)
    glEnd();
 
    // Pistão
-   glTranslatef(-9, -19, 0);
-   glTranslatef(10, x, 0);
+   glTranslatef(1, -19, 0);
+   glTranslatef(0, x, 0);
    glRotatef(-180, 0, 0, 1);
    glBegin(GL_LINE_STRIP);
    glVertex2f(0, 11);
@@ -192,13 +189,18 @@ void timer(int)
 
 int main(int argc, char **argv)
 {
+   escolha = atoi(argv[1]);
+   if (escolha != 1 && escolha != 2 && escolha != 3)
+   {
+      printf("Opção inválida! Escolha entre as opções 1, 2 ou 3.\n");
+      exit(0);
+   }
    glutInit(&argc, argv);
    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
    glutInitWindowSize(500, 500);
    glutInitWindowPosition(100, 100);
-   glutCreateWindow("model.c");
+   glutCreateWindow("mma.cpp");
    init();
-   sleep(5);
    glutDisplayFunc(display);
    glutReshapeFunc(reshape);
    glutKeyboardFunc(keyboard);
