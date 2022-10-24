@@ -8,12 +8,14 @@
 #include <stdlib.h>
 #include <cstdio>
 #include <cmath>
-#include<unistd.h>
+#include <unistd.h>
+#include <stdio.h>
 
 double posicao = 0;
 int estado = 1;
 float massa = 2, constante_amortecedor = 2, constante_mola = 2, forca = 2;
 double tempo = 0;
+int escolha = 0;
 
 void init(void)
 {
@@ -23,7 +25,19 @@ void init(void)
 
 double funcao_x_t(double tempo)
 {
-   return exp(-2*tempo)*(5*cos(7*tempo) - 1.1429*sin(7*tempo));
+   if (escolha == 0)
+   {
+      printf("Escolha a opção desejada: ");
+      scanf("%d", &escolha);
+   }
+   if (escolha == 1)
+      return 1 * exp(-2 * tempo) * cos(10 * tempo) + 3 * exp(-2 * tempo) * sin(10 * tempo);
+   else if (escolha == 2)
+      return 17 * exp(-2 * tempo) - 12 * exp(-3 * tempo);
+   else if (escolha == 3)
+      return exp(-2 * tempo) * (5 * cos(7 * tempo) - 1.1429 * sin(7 * tempo));
+   else
+      return 0;
 }
 
 void draw_parede(void)
@@ -169,36 +183,11 @@ void keyboard(unsigned char key, int x, int y)
 
 void timer(int)
 {
-   tempo += 1000 / 60;
    glutPostRedisplay();
-   glutTimerFunc(1000 / 60, timer, 0);
-   double x_t = funcao_x_t(tempo/1000);
+   glutTimerFunc(1000 / 60, timer, 1);
+   tempo += 1000 / 60;
+   double x_t = funcao_x_t(tempo / 1000);
    posicao = x_t;
-   // printf("Tempo: %f, x(t): %f\n", tempo/1000, x_t);
-
-   // switch (estado)
-   // {
-   // case 1:
-   //    if (posicao < 5)
-   //    {
-   //       posicao += 0.1;
-   //    }
-   //    else
-   //    {
-   //       estado = -1;
-   //    }
-   //    break;
-   // case -1:
-   //    if (posicao > -5)
-   //    {
-   //       posicao -= 0.1;
-   //    }
-   //    else
-   //    {
-   //       estado = 1;
-   //    }
-   //    break;
-   // }
 }
 
 int main(int argc, char **argv)
