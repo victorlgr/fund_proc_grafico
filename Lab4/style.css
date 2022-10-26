@@ -25,7 +25,7 @@ a:hover {
 
 div.gallery {
     margin: 5px;
-    border: 0px solid #ccc;
+    border: 5px solid #ffffff;
     display: table-cell;
     width: 450px;
 }

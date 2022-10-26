@@ -11,64 +11,125 @@
 
 <body>
 
-  <h1>Relatório Lab 4</h1>
-  <p>Relatório referente ao laboratório 4 realizado no dia 20/10/2022</p>
+	<h1>Relatório Lab 4</h1>
+	<p>Relatório referente ao laboratório 4 realizado no dia 20/10/2022</p>
 
-  <table>
-	<tr>
-		<th>Nome</th>
-		<th>RA</th>
-	</tr>
-	<tr>
-		<td>Cauê Montrose Bianchim</td>
-		<td>11109715</td>
-	</tr>
-	<tr>
-		<td>Ismael Trinca Junior</td>
-		<td>11131611</td>
-	</tr>
-	<tr>
-		<td>Rafael Branco Totino</td>
-		<td>11201922308</td>
-	</tr>
-	<tr>
-		<td>Victor Luiz Gluz Romano</td>
-		<td>11109915</td>
-	</tr>
-</table>
+	<table>
+		<tr>
+			<th>Nome</th>
+			<th>RA</th>
+		</tr>
+		<tr>
+			<td>Cauê Montrose Bianchim</td>
+			<td>11109715</td>
+		</tr>
+		<tr>
+			<td>Ismael Trinca Junior</td>
+			<td>11131611</td>
+		</tr>
+		<tr>
+			<td>Rafael Branco Totino</td>
+			<td>11201922308</td>
+		</tr>
+		<tr>
+			<td>Victor Luiz Gluz Romano</td>
+			<td>11109915</td>
+		</tr>
+	</table>
 
-<h2>Procedimentos realizados</h2>
+	<h2>Procedimentos realizados</h2>
 
-<p>Primeiramente se executou o projeto que foi disponibilizado no moodle. O resultado, após a execução, é mostrado na imagem a seguir.</p>
+	<p>Primeiramente se executou o projeto que foi disponibilizado no moodle. O resultado, após a execução, é mostrado a
+		seguir.</p>
 
-<div class="gallery">
-	<a href="img/elefante.png">
-		<img src="img/elefante.png">
-	</a>
+	<div class="gallery">
+		<a href="img/elefante.gif">
+			<img src="img/elefante.gif">
+		</a>
 
-</div>
+	</div>
 
-<p>Posteriormente se trocou a imagem para uma das outras 4 opções disponíveis (mba1.obj porsche.obj radar.obj teddy.obj). Obtendo, como resultado, a imagem mostrada a seguir.</p>
+	<p>Posteriormente se trocou a imagem para cada uma das outras 4 opções disponíveis (<code>mba1.obj porsche.obj radar.obj
+		teddy.obj</code>). Porém, observou-se que os objetos desenhados ficavam muito pequenos. Portanto, mudou-se os
+		argumentos <code>glScalef()</code> e <code>glTranslatef</code> da função <code>drawCar()</code>, para que os
+		objetos tivessem melhor observação.</p>
 
-<div class="gallery">
-	<a href="img/porsche1.png">
-		<img src="img/porsche1.png">
-	</a>
+	<h3>mba1.obj</h3>
 
-</div>
+	<p>Para este objeto, modificou-se as funções mencionadas para <code>glScalef(0.5,0.5,0.5)</code>; e
+		<code>glTranslatef(0,-30.00,-105)</code>.</p>
+	<div class="gallery">
+		<a href="img/mba1.gif">
+			<img src="img/mba1.gif">
+		</a>
+	</div>
 
-<p>Em seguida, como o resultado obtido anteriormente não apresentou uma visualização do objeto de forma clara, se ajustou o modo de visualização da imagem de forma a obter o resultado mostrado na imagem a seguir.</p>
+	<div class="gallery">
+		<a href="img/mba1_zoom.gif">
+			<img src="img/mba1_zoom.gif">
+		</a>
+	</div>
 
-<div class="gallery">
-	<a href="img/porsche2.png">
-		<img src="img/porsche2.png">
-	</a>
+	<h3>porsche.obj</h3>
 
-</div>
+	<p>Para este objeto, modificou-se as funções mencionadas para <code>glScalef(0.8,0.8,0.8)</code>; e
+		<code>glTranslatef(0,-20.00,-105)</code>.</p>
 
-<h2>Análises e conclusões</h2>
 
-<p>Apesar de o presente laboratório ter uma certa simplicidade na realização dos procedimentos, ele também se faz de grande ajuda para aprofundar nos conhecimentos da biblioteca OpenGL, pois ele ajuda a entender onde exatamente devemos modificar o programa em C++ para obter o resultado que queremos, como também, nos mostra uma nova visão do que podemos fazer com a biblioteca.</p>
+	<div class="gallery">
+		<a href="img/porsche.gif">
+			<img src="img/porsche.gif">
+		</a>
+	</div>
+
+	<div class="gallery">
+		<a href="img/porsche_zoom.gif">
+			<img src="img/porsche_zoom.gif">
+		</a>
+	</div>
+
+	<h3>radar.obj</h3>
+
+	<p>Para este objeto, modificou-se as funções mencionadas para <code>glScalef(1.6,1.6,1.6)</code>; e
+		<code>glTranslatef(0,-100.00,-105);</code>.</p>
+
+
+	<div class="gallery">
+		<a href="img/radar.gif">
+			<img src="img/radar.gif">
+		</a>
+	</div>
+
+	<div class="gallery">
+		<a href="img/radar_zoom.gif">
+			<img src="img/radar_zoom.gif">
+		</a>
+	</div>
+
+	<h3>teddy.obj</h3>
+
+	<p>Para este objeto, modificou-se as funções mencionadas para <code>glScalef(1.6,1.6,1.6)</code>; e
+		<code>glTranslatef(0,-10.00,-105)</code>.</p>
+
+	<div class="gallery">
+		<a href="img/teddy.gif">
+			<img src="img/teddy.gif">
+		</a>
+	</div>
+
+	<div class="gallery">
+		<a href="img/teddy_zoom.gif">
+			<img src="img/teddy_zoom.gif">
+		</a>
+	</div>
+
+	<h2>Análises e conclusões</h2>
+
+	<p>Apesar de o presente laboratório ter uma certa simplicidade na realização dos procedimentos, ele também se faz de
+		grande ajuda para aprofundar nos conhecimentos da biblioteca OpenGL, por demonstrar onde exatamente
+		devemos modificar o programa em C++ para obter o resultado que queremos, como também, nos mostra uma nova visão
+		do que podemos fazer com a biblioteca.</p>
 
 </body>
+
 </html>
