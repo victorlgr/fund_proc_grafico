@@ -39,9 +39,11 @@
 
 		<h2>Procedimentos realizados</h2>
 
+		<p>No presente relatório o primeiro procedimento realizado foi baixar os programas disponibilizados no moodle. Em seguida, após descompactar a pasta baixada, se executou cada um dos programas disponibilizados, onde cada um deles é mostrado a seguir.</p>
+
 		<h3>smooth.c</h3>
 
-		<p></p>
+		<p>A primeira observação que se fez foi que o programa utiliza o formato glColor3f(r, g, b) onde esse comando utiliza 3 parâmetros de cor real escalar. Aqui as letras colacadas entre parenteses é apenas para representar qual cor ela representa, pois na verdade no lugar das letras se utiliza números de 1 a 0 para se escolher a intensidade da cor. Outro ponto observado, é que na no programa se escolhe uma cor para cada vértice, e ao olhar para o triângulo nota-se que realmente em cada vértice há uma cor diferente, porém conforme vamos observando o meio do triângulo nota-se que essas cores se misturam. Assim, observa-se que quando cada vértice tem uma cor diferente conforme se afasta-se daquele vértice há uma mistura das cores escolhidas.</p>
 
 		<div class="gallery">
 			<a href="img/smooth.png">
@@ -51,7 +53,7 @@
 
 		<h3>alpha.c</h3>
 
-		<p></p>
+		<p>Nesse outro programa se visualizou que os parâmetros da função de mistura para o primeiro triângulo descrito no código é glColor4f(1.0, 1.0, 0.0, 0.75), já para o segundo glColor4f(0.0, 1.0, 1.0, 0.75). Onde o último parâmetro descrito (0.75) é o valor de alpha, que descreve a proporção de mistura entre os objetos. É importante dizer que esse fator (alpha) não está relacionado com transparência. Para habilitar essa mistura, no programa, são utilizadas duas funçoes simples: glEnable (GL_BLEND) e glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA). Com elas a mistura é aplicada através da comparação da cor de um objeto com a cor atual da imagem num pixel, e pela coloração do pixel através da mistura a cor atual é feita.</p>
 
 		<div class="gallery">
 			<a href="img/alpha11.png">
@@ -82,7 +84,7 @@
 
 		<h3>alpha.c modificado</h3>
 
-		<p></p>
+		<p>Aqui se pegou o código do programa alpha.c, mostrado anteriormente, e basicamente se acrescentou um outro triângulo ao fundo com a coloração azul. Nota-se, a partir do resultado mostrado a seguir, que há uma mistura das colorações onde o triângulo é posicionado, e essa mistura é observada mais claramente onde, o triângulo acrescentado, é posto atrás de apenas um dos triângulos e  quando há a sobreposição dos dois sobre ele não há uma mudança significativa na coloração naquela região.</p>
 
 		<div class="gallery">
 			<a href="img/alpha21.png">
