@@ -1,8 +1,9 @@
 /*
-Nome dos Integrantes:
-
-03/11/2022
-
+ * data 03/11/2022
+ * Cauê Montrose Bianchim, RA 11109715
+ * Ismael Trinca Junior, RA 11131611
+ * Rafael Branco Totino, RA 11201922308
+ * Victor Luiz Gluz Romano, RA 11109915
 
 Para execução do programa basta inserir o seguinte comando:
 gcc -o alphadois alphadois.c -lglut -lGL -lGLU && ./alphadois

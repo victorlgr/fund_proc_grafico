@@ -1,8 +1,14 @@
 /*
- * smooth.c
- * This program demonstrates smooth shading.
- * A smooth shaded polygon is drawn in a 2-D projection.
- */
+ * data 03/11/2022
+ * Cauê Montrose Bianchim, RA 11109715
+ * Ismael Trinca Junior, RA 11131611
+ * Rafael Branco Totino, RA 11201922308
+ * Victor Luiz Gluz Romano, RA 11109915
+
+Para execução do programa basta inserir o seguinte comando:
+gcc -o cubo cubo.c -lglut -lGL -lGLU && ./cubo
+*/
+
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
