@@ -1,113 +1,198 @@
 <!DOCTYPE html>
 <html lang="pt">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="style.css" />
-		<title>Lab 5</title>
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>Lab 5</title>
+</head>
 
-	<body>
+<body>
 
-		<h1>Relatório Lab 5</h1>
-		<p>Relatório referente ao laboratório 5 realizado no dia 01/11/2022</p>
+	<h1>Relatório Lab 5</h1>
+	<p>Relatório referente ao laboratório 5 realizado no dia 01/11/2022</p>
 
-		<table>
-			<tr>
-				<th>Nome</th>
-				<th>RA</th>
-			</tr>
-			<tr>
-				<td>Cauê Montrose Bianchim</td>
-				<td>11109715</td>
-			</tr>
-			<tr>
-				<td>Ismael Trinca Junior</td>
-				<td>11131611</td>
-			</tr>
-			<tr>
-				<td>Rafael Branco Totino</td>
-				<td>11201922308</td>
-			</tr>
-			<tr>
-				<td>Victor Luiz Gluz Romano</td>
-				<td>11109915</td>
-			</tr>
-		</table>
+	<table>
+		<tr>
+			<th>Nome</th>
+			<th>RA</th>
+		</tr>
+		<tr>
+			<td>Cauê Montrose Bianchim</td>
+			<td>11109715</td>
+		</tr>
+		<tr>
+			<td>Ismael Trinca Junior</td>
+			<td>11131611</td>
+		</tr>
+		<tr>
+			<td>Rafael Branco Totino</td>
+			<td>11201922308</td>
+		</tr>
+		<tr>
+			<td>Victor Luiz Gluz Romano</td>
+			<td>11109915</td>
+		</tr>
+	</table>
 
-		<h2>Procedimentos realizados</h2>
+	<h2>Procedimentos realizados</h2>
 
-		<p>No presente relatório o primeiro procedimento realizado foi baixar os programas disponibilizados no moodle. Em seguida, após descompactar a pasta baixada, se executou cada um dos programas disponibilizados, onde cada um deles é mostrado a seguir.</p>
+	<p>No presente relatório o primeiro procedimento realizado foi baixar os programas disponibilizados no moodle. Em
+		seguida, após descompactar a pasta baixada, se executou cada um dos programas disponibilizados, onde cada um
+		deles é mostrado a seguir.</p>
 
-		<h3>smooth.c</h3>
+	<h3>smooth.c</h3>
 
-		<p>A primeira observação que se fez foi que o programa utiliza o formato glColor3f(r, g, b) onde esse comando utiliza 3 parâmetros de cor real escalar. Aqui as letras colacadas entre parenteses é apenas para representar qual cor ela representa, pois na verdade no lugar das letras se utiliza números de 1 a 0 para se escolher a intensidade da cor. Outro ponto observado, é que na no programa se escolhe uma cor para cada vértice, e ao olhar para o triângulo nota-se que realmente em cada vértice há uma cor diferente, porém conforme vamos observando o meio do triângulo nota-se que essas cores se misturam. Assim, observa-se que quando cada vértice tem uma cor diferente conforme se afasta-se daquele vértice há uma mistura das cores escolhidas.</p>
+	<p>A primeira observação que se fez foi que o programa utiliza o formato glColor3f(r, g, b) onde esse comando
+		utiliza 3 parâmetros de cor real escalar. Aqui as letras colacadas entre parenteses é apenas para representar
+		qual cor ela representa, pois na verdade no lugar das letras se utiliza números de 1 a 0 para se escolher a
+		intensidade da cor. Outro ponto observado, é que na no programa se escolhe uma cor para cada vértice, e ao olhar
+		para o triângulo nota-se que realmente em cada vértice há uma cor diferente, porém conforme vamos observando o
+		meio do triângulo nota-se que essas cores se misturam. Assim, observa-se que quando cada vértice tem uma cor
+		diferente conforme se afasta-se daquele vértice há uma mistura das cores escolhidas.</p>
 
-		<div class="gallery">
-			<a href="img/smooth.png">
-				<img src="img/smooth.png">
-			</a>
-		</div>
+	<div class="gallery">
+		<a href="img/smooth.png">
+			<img src="img/smooth.png">
+		</a>
+	</div>
 
-		<h3>alpha.c</h3>
+	<h3>alpha.c</h3>
 
-		<p>Nesse outro programa se visualizou que os parâmetros da função de mistura para o primeiro triângulo descrito no código é glColor4f(1.0, 1.0, 0.0, 0.75), já para o segundo glColor4f(0.0, 1.0, 1.0, 0.75). Onde o último parâmetro descrito (0.75) é o valor de alpha, que descreve a proporção de mistura entre os objetos. É importante dizer que esse fator (alpha) não está relacionado com transparência. Para habilitar essa mistura, no programa, são utilizadas duas funçoes simples: glEnable (GL_BLEND) e glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA). Com elas a mistura é aplicada através da comparação da cor de um objeto com a cor atual da imagem num pixel, e pela coloração do pixel através da mistura a cor atual é feita.</p>
+	<p>Nesse outro programa se visualizou que os parâmetros da função de mistura para o primeiro triângulo descrito no
+		código é glColor4f(1.0, 1.0, 0.0, 0.75), já para o segundo glColor4f(0.0, 1.0, 1.0, 0.75). Onde o último
+		parâmetro descrito (0.75) é o valor de alpha, que descreve a proporção de mistura entre os objetos. É importante
+		dizer que esse fator (alpha) não está relacionado com transparência. Para habilitar essa mistura, no programa,
+		são utilizadas duas funçoes simples: glEnable (GL_BLEND) e glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA).
+		Com elas a mistura é aplicada através da comparação da cor de um objeto com a cor atual da imagem num pixel, e
+		pela coloração do pixel através da mistura a cor atual é feita.</p>
 
-		<div class="gallery">
-			<a href="img/alpha11.png">
-				<img src="img/alpha11.png">
-			</a>
-		</div>
+	<div class="gallery">
+		<a href="img/alpha11.png">
+			<img src="img/alpha11.png">
+		</a>
+	</div>
 
-		<div class="gallery">
-			<a href="img/alpha12.png">
-				<img src="img/alpha12.png">
-			</a>
-		</div>
+	<div class="gallery">
+		<a href="img/alpha12.png">
+			<img src="img/alpha12.png">
+		</a>
+	</div>
 
-		<h3>transparencia.c</h3>
+	<h3>transparencia.c</h3>
 
-		<p></p>
+	<p>Neste programa, verificou-se a criação da figura abaixo, que busca demonstrar o conceito de transparência em
+		OpenGL.
+		Apesar de ser chamado de transparência, o representado em OpenGL não é este fenômeno de fato, porque
+		transparência real é um processo de cor subtrativa. Por exemplo, ao olhar um objeto vermelho puro por uma lente
+		verde pura, o objeto aparecerá preto, enquanto na mesma situação no OpenGL cria um tom de amarelo.
+	</p>
 
-		<div class="gallery">
-			<a href="img/transparencia.png">
-				<img src="img/transparencia.png">
-			</a>
-		</div>
-
-
-		<h3>Cubo de cores</h3>
-
-		<p></p>
-
-		<h3>alpha.c modificado</h3>
-
-		<p>Aqui se pegou o código do programa alpha.c, mostrado anteriormente, e basicamente se acrescentou um outro triângulo ao fundo com a coloração azul. Nota-se, a partir do resultado mostrado a seguir, que há uma mistura das colorações onde o triângulo é posicionado, e essa mistura é observada mais claramente onde, o triângulo acrescentado, é posto atrás de apenas um dos triângulos e  quando há a sobreposição dos dois sobre ele não há uma mudança significativa na coloração naquela região.</p>
-
-		<div class="gallery">
-			<a href="img/alpha21.png">
-				<img src="img/alpha21.png">
-			</a>
-		</div>
-
-		<div class="gallery">
-			<a href="img/alpha22.png">
-				<img src="img/alpha22.png">
-			</a>
-		</div>
+	<div class="gallery">
+		<a href="img/transparencia.png">
+			<img src="img/transparencia.png">
+		</a>
+	</div>
 
 
-		<h2>Análises e conclusões</h2>
+	<h3>Cubo de cores</h3>
 
-		<p>Apesar de o presente laboratório ter uma certa simplicidade na realização dos procedimentos, ele também se
-			faz de
-			grande ajuda para aprofundar nos conhecimentos da biblioteca OpenGL, por demonstrar onde exatamente
-			devemos modificar o programa em C++ para obter o resultado que queremos, como também, nos mostra uma nova
-			visão
-			do que podemos fazer com a biblioteca.</p>
+	<p>O objetivo deste exercício é a criação de um cubo de cores conforme descrito em aula, onde cada um de seus
+		vértices contém uma das três cores primárias básicas (vermelho, verde ou azul) ou suas combinações (amarelo,
+		ciano, magenta e branco, além do preto que seria a ausência das três cores). Para isso, criou-se 6 poligonos
+		representando cada face do cubo e coloriu seus vértices individualmente. O resultado é apresentado abaixo, na
+		representação isométrica do cubo:</p>
 
-	</body>
+	<div class="gallery">
+		<a href="img/isometrico_cima.png">
+			<img src="img/isometrico_cima.png">
+		</a>
+		<div class="desc">Isométrico de cima</div>
+	</div>
+
+	<div class="gallery">
+		<a href="img/isometrico_baixo.png">
+			<img src="img/isometrico_baixo.png">
+		</a>
+		<div class="desc">Isométrico de baixo</div>
+	</div>
+
+	<p>Abaixo estão todas as faces do cubo:</p>
+
+	<div class="gallery">
+		<a href="img/frente.png">
+			<img src="img/frente.png">
+		</a>
+		<div class="desc">Frente</div>
+	</div>
+
+	<div class="gallery">
+		<a href="img/verso.png">
+			<img src="img/verso.png">
+		</a>
+		<div class="desc">Verso</div>
+	</div>
+
+	<div class="gallery">
+		<a href="img/direita.png">
+			<img src="img/direita.png">
+		</a>
+		<div class="desc">Direita</div>
+	</div>
+
+	<div class="gallery">
+		<a href="img/esquerda.png">
+			<img src="img/esquerda.png">
+		</a>
+		<div class="desc">Esquerda</div>
+	</div>
+
+	<div class="gallery">
+		<a href="img/cima.png">
+			<img src="img/cima.png">
+		</a>
+		<div class="desc">Cima</div>
+	</div>
+
+	<div class="gallery">
+		<a href="img/baixo.png">
+			<img src="img/baixo.png">
+		</a>
+		<div class="desc">Baixo</div>
+	</div>
+
+	<h3>alpha.c modificado</h3>
+
+	<p>Aqui se pegou o código do programa alpha.c, mostrado anteriormente, e basicamente se acrescentou um outro
+		triângulo ao fundo com a coloração azul. Nota-se, a partir do resultado mostrado a seguir, que há uma mistura
+		das colorações onde o triângulo é posicionado, e essa mistura é observada mais claramente onde, o triângulo
+		acrescentado, é posto atrás de apenas um dos triângulos e quando há a sobreposição dos dois sobre ele não há uma
+		mudança significativa na coloração naquela região.</p>
+
+	<div class="gallery">
+		<a href="img/alpha21.png">
+			<img src="img/alpha21.png">
+		</a>
+	</div>
+
+	<div class="gallery">
+		<a href="img/alpha22.png">
+			<img src="img/alpha22.png">
+		</a>
+	</div>
+
+
+	<h2>Análises e conclusões</h2>
+
+	<p>Apesar de o presente laboratório ter uma certa simplicidade na realização dos procedimentos, ele também se
+		faz de
+		grande ajuda para aprofundar nos conhecimentos da biblioteca OpenGL, por demonstrar onde exatamente
+		devemos modificar o programa em C++ para obter o resultado que queremos, como também, nos mostra uma nova
+		visão
+		do que podemos fazer com a biblioteca.</p>
+
+</body>
 
 </html>
