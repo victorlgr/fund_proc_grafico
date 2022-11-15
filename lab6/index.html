@@ -53,7 +53,22 @@
 
 	<h3>material.c</h3>
 
-	<p></p>
+	<p>A primeira coisa que se notou neste programa são os valores de propriedades da fonte de luz:<br>
+		GLfloat ambient[] = { 0.0, 0.0, 0.0, 1.0 };<br>
+		GLfloat diffuse[] = { 1.0, 1.0, 1.0, 1.0 };<br>
+		GLfloat specular[] = { 1.0, 1.0, 1.0, 1.0 };<br>
+		GLfloat position[] = { 0.0, 3.0, 2.0, 0.0 };<br>
+	Aqui nota-se que os valores utilizados nas propriedades são os valores default para quase todas as propriedades, a única que não utiliza o valor defaut é o position[]. No programa também se notou que, o que foi habilitado no modelo de iluminação foi a iluminação em si atraves do comando glEnable(GL_LIGHTING), e a fonte de luz definida através do comando glEnable(GL_LIGHT0). Já para a parte das propriedades dos materiais utilizados em cada esfera, basicamente se utilizou os valores a seguir:<br>
+	GLfloat no_mat[] = { 0.0, 0.0, 0.0, 1.0 };<br>
+    GLfloat mat_ambient[] = { 0.7, 0.7, 0.7, 1.0 };<br>
+    GLfloat mat_ambient_color[] = { 0.8, 0.8, 0.2, 1.0 };<br>
+    GLfloat mat_diffuse[] = { 0.1, 0.5, 0.8, 1.0 };<br>
+    GLfloat mat_specular[] = { 1.0, 1.0, 1.0, 1.0 };<br>
+    GLfloat no_shininess[] = { 0.0 };<br>
+    GLfloat low_shininess[] = { 5.0 };<br>
+    GLfloat high_shininess[] = { 100.0 };<br>
+    GLfloat mat_emission[] = {0.3, 0.2, 0.2, 0.0};<br>
+	onde cada esfera tem uma mistura dessas propriedades.</p>
 
 	<div class="gallery">
 		<a href="img/material.png">
@@ -61,13 +76,13 @@
 		</a>
 	</div>
 
-	<h3></h3>
+	<h3>movelight.c</h3>
 
-	<p></p>
+	<p>Neste programa são desenhados um anel e um cubo que detem a fonte de luz. No programa para que a fonte de luz (cubo) se mova, basta utilizar a tecla esquerda do mouse e a fonte de luz rotaciona 30 graus em volta do anel.</p>
 
 	<div class="gallery">
-		<a href="img.png">
-			<img src="img.png">
+		<a href="img/movelight.png">
+			<img src="img/movelight.png">
 		</a>
 	</div>
 
@@ -76,72 +91,13 @@
 
 	<p></p>
 
-	<div class="gallery">
-		<a href="img.png">
-			<img src="img.png">
-		</a>
-	</div>
-
-	<div class="gallery">
-		<a href="img.png">
-			<img src="img.png">
-		</a>
-	</div>
-
-	<p></p>
-
-	<div class="gallery">
-		<a href="img.png">
-			<img src="img.png">
-		</a>
-	</div>
-
-	<div class="gallery">
-		<a href="img.png">
-			<img src="img.png">
-		</a>
-	</div>
-
-	<div class="gallery">
-		<a href="img.png">
-			<img src="img.png">
-		</a>
-	</div>
-
-	<div class="gallery">
-		<a href="img.png">
-			<img src="img.png">
-		</a>
-	</div>
-
-	<div class="gallery">
-		<a href="img.png">
-			<img src="img.png">
-		</a>
-	</div>
-
-	<div class="gallery">
-		<a href="img.png">
-			<img src="img.png">
-		</a>
-	</div>
-
 	<h3></h3>
 
 	<p></p>
+	
+	<h3></h3>
 
-	<div class="gallery">
-		<a href="img.png">
-			<img src="img.png">
-		</a>
-	</div>
-
-	<div class="gallery">
-		<a href="img.png">
-			<img src="img.png">
-		</a>
-	</div>
-
+	<p></p>
 
 	<h2>Análises e conclusões</h2>
 
