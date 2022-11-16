@@ -1,113 +1,201 @@
 <!DOCTYPE html>
 <html lang="pt">
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="style.css" />
-	<title>Lab 6</title>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<title>Lab 6</title>
+	</head>
 
-<body>
+	<body>
 
-	<h1>Relatório Lab 6</h1>
-	<p>Relatório referente ao laboratório 6 realizado no dia 08/11/2022</p>
+		<h1>Relatório Lab 6</h1>
+		<p>Relatório referente ao laboratório 6 realizado no dia 08/11/2022</p>
 
-	<table>
-		<tr>
-			<th>Nome</th>
-			<th>RA</th>
-		</tr>
-		<tr>
-			<td>Cauê Montrose Bianchim</td>
-			<td>11109715</td>
-		</tr>
-		<tr>
-			<td>Ismael Trinca Junior</td>
-			<td>11131611</td>
-		</tr>
-		<tr>
-			<td>Rafael Branco Totino</td>
-			<td>11201922308</td>
-		</tr>
-		<tr>
-			<td>Victor Luiz Gluz Romano</td>
-			<td>11109915</td>
-		</tr>
-	</table>
+		<table>
+			<tr>
+				<th>Nome</th>
+				<th>RA</th>
+			</tr>
+			<tr>
+				<td>Cauê Montrose Bianchim</td>
+				<td>11109715</td>
+			</tr>
+			<tr>
+				<td>Ismael Trinca Junior</td>
+				<td>11131611</td>
+			</tr>
+			<tr>
+				<td>Rafael Branco Totino</td>
+				<td>11201922308</td>
+			</tr>
+			<tr>
+				<td>Victor Luiz Gluz Romano</td>
+				<td>11109915</td>
+			</tr>
+		</table>
 
-	<h2>Procedimentos realizados</h2>
+		<h2>Procedimentos realizados</h2>
 
-	<p>A partir dos programas disponibilizados no moodle, se realizou tanto a execução desses arquivos quanto pequenas modificações nos programas para se introduzir aspectos práticos de iluminação e Shading em computação gráfica atravé do OpenGL.</p>
-
-	<h3>light.c</h3>
-
-	<p>Neste primeiro programa se viu, basicamente, a execução e o funcionamento do programa. Nele são utilizados basicamente propriedades do material e cria-se uma fonte de luz através do GL_POSITION.</p>
-
-	<div class="gallery">
-		<a href="img/light.png">
-			<img src="img/light.png">
-		</a>
-	</div>
-
-	<h3>material.c</h3>
-
-	<p>A primeira coisa que se notou neste programa são os valores de propriedades da fonte de luz:<br>
-		GLfloat ambient[] = { 0.0, 0.0, 0.0, 1.0 };<br>
-		GLfloat diffuse[] = { 1.0, 1.0, 1.0, 1.0 };<br>
-		GLfloat specular[] = { 1.0, 1.0, 1.0, 1.0 };<br>
-		GLfloat position[] = { 0.0, 3.0, 2.0, 0.0 };<br>
-	Aqui nota-se que os valores utilizados nas propriedades são os valores default para quase todas as propriedades, a única que não utiliza o valor defaut é o position[]. No programa também se notou que, o que foi habilitado no modelo de iluminação foi a iluminação em si atraves do comando glEnable(GL_LIGHTING), e a fonte de luz definida através do comando glEnable(GL_LIGHT0). Já para a parte das propriedades dos materiais utilizados em cada esfera, basicamente se utilizou os valores a seguir:<br>
-	GLfloat no_mat[] = { 0.0, 0.0, 0.0, 1.0 };<br>
-    GLfloat mat_ambient[] = { 0.7, 0.7, 0.7, 1.0 };<br>
-    GLfloat mat_ambient_color[] = { 0.8, 0.8, 0.2, 1.0 };<br>
-    GLfloat mat_diffuse[] = { 0.1, 0.5, 0.8, 1.0 };<br>
-    GLfloat mat_specular[] = { 1.0, 1.0, 1.0, 1.0 };<br>
-    GLfloat no_shininess[] = { 0.0 };<br>
-    GLfloat low_shininess[] = { 5.0 };<br>
-    GLfloat high_shininess[] = { 100.0 };<br>
-    GLfloat mat_emission[] = {0.3, 0.2, 0.2, 0.0};<br>
-	onde cada esfera tem uma mistura dessas propriedades.</p>
-
-	<div class="gallery">
-		<a href="img/material.png">
-			<img src="img/material.png">
-		</a>
-	</div>
-
-	<h3>movelight.c</h3>
-
-	<p>Neste programa são desenhados um anel e um cubo que detem a fonte de luz. No programa para que a fonte de luz (cubo) se mova, basta utilizar a tecla esquerda do mouse e a fonte de luz rotaciona 30 graus em volta do anel.</p>
-
-	<div class="gallery">
-		<a href="img/movelight.png">
-			<img src="img/movelight.png">
-		</a>
-	</div>
+		<p>A partir dos programas disponibilizados no moodle, se realizou tanto a execução desses arquivos quanto
+			pequenas modificações nos programas para se introduzir aspectos práticos de iluminação e Shading em
+			computação
+			gráfica através do OpenGL.</p>
 
 
-	<h3></h3>
+		<h3>light.c</h3>
 
-	<p></p>
+		<p>O programa consiste na exibição de uma esfera iluminada por uma luz. Esta esfera é definida por uma
+			propriedade
+			de reflectância RGBA especular (<code>GL_SPECULAR</code> de <code>{ 1.0, 1.0, 1.0, 1.0 }</code>) e uma
+			propriedade de expoênte RGBA especular (<code>GL_SHININESS</code> de <code>{ 50.0 }</code>). Com relação a
+			luz,
+			a única propriedade definida diferente da padrão é sua posição (<code>GL_POSITION</code> de
+			<code>{ 1.0, 1.0, 1.0, 0.0 }</code>). O resultado é apresentado na imagem abaixo:
+		</p>
 
-	<h3></h3>
+		<div class="gallery">
+			<a href="img/light.png">
+				<img src="img/light.png">
+			</a>
+		</div>
 
-	<p></p>
-	
-	<h3></h3>
+		<h3>material.c</h3>
 
-	<p></p>
+		<p>O programa consiste na exibição de 12 diferentes esferas, cada uma com uma combinação de propriedades
+			diferentes
+			de seu material sob uma mesma iluminação, que consiste em uma luz ambiente
+			(<code>GL_AMBIENT</code> de <code>{ 0.0, 0.0, 0.0, 1.0 }</code>)
+			e difusa (<code>GL_DIFFUSE</code> de <code>{ 1.0, 1.0, 1.0, 1.0 }</code>),
+			em uma posição diferente da padrão (<code>GL_POSITION</code> de <code>{ 0.0, 3.0, 2.0, 0.0 }</code>).
+			Além disso, a partir da propriedade <code>glLightModelfv()</code>, define-se
+			<code>GL_LIGHT_MODEL_AMBIENT</code> (intensidade do RGBA ambiente da cena) de
+			<code>{ 0.4, 0.4, 0.4, 1.0 }</code> e
+			<code>GL_LIGHT_MODEL_LOCAL_VIEWER</code> (ângulo de reflexão especular) de <code>{ 0.0 }</code>.
+		</p>
 
-	<h2>Análises e conclusões</h2>
+		<p>Aqui nota-se que os valores utilizados nas propriedades são os valores default para quase todas as
+			propriedades, a única que não utiliza o valor defaut é o position[]. No programa também se notou que, o que
+			foi habilitado no modelo de iluminação foi a iluminação em si atraves do comando glEnable(GL_LIGHTING), e a
+			fonte de luz definida através do comando glEnable(GL_LIGHT0). Já para a parte das propriedades dos materiais
+			utilizados em cada esfera, basicamente se utilizou os valores a seguir:<br>
+			GLfloat no_mat[] = { 0.0, 0.0, 0.0, 1.0 };<br>
+			GLfloat mat_ambient[] = { 0.7, 0.7, 0.7, 1.0 };<br>
+			GLfloat mat_ambient_color[] = { 0.8, 0.8, 0.2, 1.0 };<br>
+			GLfloat mat_diffuse[] = { 0.1, 0.5, 0.8, 1.0 };<br>
+			GLfloat mat_specular[] = { 1.0, 1.0, 1.0, 1.0 };<br>
+			GLfloat no_shininess[] = { 0.0 };<br>
+			GLfloat low_shininess[] = { 5.0 };<br>
+			GLfloat high_shininess[] = { 100.0 };<br>
+			GLfloat mat_emission[] = {0.3, 0.2, 0.2, 0.0};<br>
+			onde cada esfera tem uma mistura dessas propriedades.</p>
 
-	<p>Apesar de o presente laboratório ter uma certa simplicidade na realização dos procedimentos, ele também se
-		faz de
-		grande ajuda para aprofundar nos conhecimentos da biblioteca OpenGL, por demonstrar onde exatamente
-		devemos modificar o programa em C++ para obter o resultado que queremos, como também, nos mostra uma nova
-		visão
-		do que podemos fazer com a biblioteca.</p>
+		<p>As esferas na primeira linha possuem materiais sem reflexão ambiente. As esferas da segunda linha possuem
+			materiais com reflexão ambiente significativa. As esperas da terceira linha possuem materiais com reflexo de
+			ambiente colorido.
+		</p>
 
-</body>
+		<p>As esferas da primeira coluna possuem materiais com reflexão difusa e azul somente. As esferas da segunda
+			coluna
+			possuem, além de reflexão difusa azul, reflexão especular com baixo coeficiente de brilho. As esferas da
+			terceira coluna possuem as mesmas características da segunda coluna, com a mudança de alto coeficiente de
+			brilho
+			(o que resulta em um alto realce). A quarta coluna inclui materiais que possuem um componente emissivo.
+		</p>
+
+		<div class="gallery">
+			<a href="img/material.png">
+				<img src="img/material.png">
+			</a>
+		</div>
+
+		<h3>movelight.c</h3>
+
+		<p>O programa consiste na movimentação de uma luz em volta de um toroide. São desenhados, além do toroide, um
+			cubo
+			para indicar a posição da luz. A luz é movimentada criando uma rotação na matriz antes de definir a posição
+			e
+			habilitar a luz. O resultado é apresentado abaixo:</p>
+
+		<div class="gallery">
+			<a href="img/movelight.gif">
+				<img src="img/movelight.gif">
+			</a>
+		</div>
+
+
+		<h3>Exercício 1</h3>
+
+		<p>Neste exercício, foram realizadas duas modificações com relação ao programa <code>light.c</code>
+			disponibilizado,
+			mudou-se a cor da fonte de luz para uma colorida e adicionou-se uma nova fonte de luz. Para a primeira
+			modificação, criou-se um vetor com a cor vermelha <code>GLfloat cor1[] = { 1.0, 0.0, 0.0, 1.0 }</code> e
+			definiu-se a cor da luz com o comando <code>glLightfv(GL_LIGHT0, GL_SPECULAR, cor)</code>. Para a segunda
+			modificação, criou-se um vetor para a posição da nova luz
+			<code>GLfloat light_position1[] = { -2.0, -2.0, 1.0, 0.0 }</code>, um outro vetor de cor
+			<code>GLfloat cor2[] = { 0.0, 0.0, 1.0, 1.0 }</code> e replicou-se os comandos
+			<code>glLightfv(GL_LIGHT1, GL_POSITION, light_position1)</code>,
+			<code>glLightfv(GL_LIGHT1, GL_SPECULAR, cor2)</code> e
+			<code>glEnable(GL_LIGHT1)</code>. O resultado é apresentado na figura abaixo:
+		</p>
+
+		<div class="gallery">
+			<a href="img/light1.png">
+				<img src="img/light1.png">
+			</a>
+		</div>
+
+		<h3>Exercício 2</h3>
+
+		<p>O objetivo deste exercício é trocar o tipo de luz do programa <code>light.c</code> disponibilizado para
+			spotlight. Para isso, primeiramente, mudou-se o alpha da posição da luz para 1.0, mudança necessária para
+			uma
+			luz spot. Em seguida, definiu-se 4 vetores adicionais de luz ambiente, difusa, especular e posição do spot,
+			com
+			seus respectivos comandos <code>glLightfv()</code>. Definiu-se também 3 tipos de atenuação, constante,
+			linear e
+			quadrática. Por fim, definiu-se o ângulo de corte para 45º e exponente para 2.0. O resultado é apresentado
+			abaixo:</p>
+
+		<div class="gallery">
+			<a href="img/light2.png">
+				<img src="img/light2.png">
+			</a>
+		</div>
+
+		<h3>Exercício 3</h3>
+
+		<p>Neste exercício, escolheu-se o dodecaedro e uma chaleira como objetos do glut. O primeiro foi definido com
+			material sem reflectância RGBA, reflexão difusa, sem reflexão especular, alto brilho e sem emissão de luz. O
+			segundo foi definido com reflextância RGBA, sem reflexão difusa, com reflexão especular, baixo brilho e com
+			emissão de luz. A primeira imagem abaixo foi criada mudando a posição de luz ambiente original para
+			<code>GLfloat position[] = { <strong>5.0</strong>, 3.0, 2.0, 0.0 }</code> e a segunda imagem para
+			<code>GLfloat position[] = { <strong>-5.0</strong>, 3.0, 2.0, 0.0 }</code>.
+		</p>
+
+		<div class="gallery">
+			<a href="img/material21.png">
+				<img src="img/material21.png">
+			</a>
+		</div>
+
+		<div class="gallery">
+			<a href="img/material22.png">
+				<img src="img/material22.png">
+			</a>
+		</div>
+
+		<h2>Análises e conclusões</h2>
+
+		<p>Apesar de o presente laboratório ter uma certa simplicidade na realização dos procedimentos, ele também se
+			faz de
+			grande ajuda para aprofundar nos conhecimentos da biblioteca OpenGL, por demonstrar onde exatamente
+			devemos modificar o programa em C++ para obter o resultado que queremos, como também nos mostra uma nova
+			visão
+			do que podemos fazer com a biblioteca.</p>
+
+	</body>
 
 </html>
