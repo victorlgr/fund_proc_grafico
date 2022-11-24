@@ -39,12 +39,17 @@
 
 		<h2>Procedimentos realizados</h2>
 
-		<p>No presente relatório, primeiramente, se excecutou os programas que foram disponibilizados. Em seguida, se realizou o exercício solicitado.</p>
+		<p>No presente relatório, primeiramente, se excecutou os programas que foram disponibilizados. Em seguida, se
+			realizou o exercício solicitado.</p>
 
 
 		<h3>Checker.c</h3>
 
-		<p>Neste primeiro programa apenas se realizou a execução dele utilizando do comando <code>gcc -o checker checker.c -lglut -lGL -lGLU && ./checker</code> e se visualizou o resultado, que é mostrado na imagem a seguir, como também se deu uma olhada no código do programa.</p>
+		<p>Neste primeiro programa apenas realizou-se sua compilação utilizando do comando
+			<code>gcc -o checker checker.c -lglut -lGL -lGLU</code> e execução utilizando-se o comando
+			<code>./checker</code>. Observa-se que é desenhado um padrão de tabuleiro de xadrez tanto de frente quanto
+			levemente inclinado. O resultado é apresentado na imagem abaixo:
+		</p>
 
 		<div class="gallery">
 			<a href="img/Checker.c.png">
@@ -54,7 +59,11 @@
 
 		<h3>Texbind.c</h3>
 
-		<p>Neste programa ao execeutá-lo vemos que há a utilização de duas testuras, basicemente as diferenças percebidas entre elas é que em um temos quadrados menores brancos enquanto na outra há quadrados maiores vermelhos. Assim nota-se que ao se utilizar duas texturas tem-se duas representações diferentes na imagem. Para que se possa aplicar ambas as texturas em um mesmo objeto devemos escolher áreas diferentes do objeto para cada textura.</p>
+		<p>Neste programa ao execeutá-lo vemos que há a utilização de duas texturas, basicamente as diferenças
+			percebidas entre elas é que em um temos quadrados menores brancos enquanto na outra há quadrados maiores
+			vermelhos. Assim nota-se que ao se utilizar duas texturas tem-se duas representações diferentes na imagem.
+			Para que se possa aplicar ambas as texturas em um mesmo objeto devemos escolher áreas diferentes do objeto
+			para cada textura.</p>
 
 		<div class="gallery">
 			<a href="img/Texbind.c.png">
@@ -64,39 +73,23 @@
 
 		<h3>TextureRGB.c</h3>
 
-		<p>Neste programa o resultado obtido é uma pirâmide com uma textura de uma imagem de olho no qual pode mudar as cores entre azul, verde e vermelho. Isso pode ser modificado utilizando um menu que é apresentado quando clicamos com o botão direito do mouse. </p> <!--Falta explicar porque foram definidas as normais-->
+		<p>Neste programa o resultado obtido é uma pirâmide com uma textura de uma imagem de olho no qual pode mudar as
+			cores entre azul, verde e vermelho. Isso pode ser modificado utilizando um menu que é apresentado quando
+			clicamos com o botão direito do mouse ou pelas teclas de função. No programa, definiu-se os vetores normais
+			para que o cálculo de luz possa ser realizado corretamente.</p>
 
 		<div class="gallery">
-			<a href="img/TextureRGB.c.gif">
-				<img src="img/TextureRGB.c.gif">
-			</a>
-		</div>
-
-		<div class="gallery">
-			<a href="img/TextureRGB.c.gif">
-				<img src="img/TextureRGB.c.gif">
-			</a>
-		</div>
-
-		<div class="gallery">
-			<a href="img/TextureRGB.c.gif">
-				<img src="img/TextureRGB.c.gif">
-			</a>
-		</div>
-
-		<h3>Exercício 1</h3>
-
-		<p></p>
-
-		<div class="gallery">
-			<a href="img/.png">
-				<img src="img/.png">
+			<a href="img/TextureRGB.gif">
+				<img src="img/TextureRGB.gif">
 			</a>
 		</div>
 
 		<h2>Análises e conclusões</h2>
 
-		<p>Apesar de o presente laboratório ter uma certa simplicidade na realização dos procedimentos, ele também se faz de grande ajuda para aprofundar nos conhecimentos da biblioteca OpenGL, por demonstrar onde exatamente devemos modificar o programa em C++ para obter o resultado que queremos, como também nos mostra uma nova visão do que podemos fazer com a biblioteca.</p>
+		<p>Apesar de o presente laboratório ter uma certa simplicidade na realização dos procedimentos, ele também se
+			faz de grande ajuda para aprofundar nos conhecimentos da biblioteca OpenGL, por demonstrar onde exatamente
+			devemos modificar o programa em C++ para obter o resultado que queremos, como também nos mostra uma nova
+			visão do que podemos fazer com a biblioteca.</p>
 
 	</body>
 
