@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>S1 - MF2</title>
+    </head>
+
+    <body>
+        <h1>Seminário S2 - modelagem funcional</h1>
+
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>RA</th>
+            </tr>
+            <tr>
+                <td>Cauê Montrose Bianchim</td>
+                <td>11109715</td>
+            </tr>
+            <tr>
+                <td>Ismael Trinca Junior</td>
+                <td>11131611</td>
+            </tr>
+            <tr>
+                <td>Rafael Branco Totino</td>
+                <td>11201922308</td>
+            </tr>
+            <tr>
+                <td>Victor Luiz Gluz Romano</td>
+                <td>11109915</td>
+            </tr>
+        </table>
+
+        <h2>Sistema Massa Mola Amortecedor</h2>
+
+        <p>A imagem abaixo apresenta um sistema que consiste de uma única massa <strong>m</strong>, uma mola de
+            coeficiente
+            elástico <strong>k</strong> e um amortecedor com coeficiente <strong>b</strong>. Além deles, temos uma força
+            de entrada <strong>F(t)</strong>. <strong>X(t)</strong> é a distância percorrida pela massa
+            <strong>m</strong>.
+        </p>
+
+        <div>
+            <a target="_blank" href="img/mma.png">
+                <img src="img/mma.png" height="300">
+            </a>
+        </div>
+
+        <p>Relembrando, a equação que rege o sistema é dada abaixo, sendo t<sub>0</sub>, x(0) e ẋ(0) as condições
+            iniciais.</p>
+
+        <div>
+            <a target="_blank" href="img/eq1.png">
+                <img src="img/eq1.png" height="100">
+            </a>
+        </div>
+
+        <p>A equação característica é:</p>
+
+        <div>
+            <a target="_blank" href="img/eq2.png">
+                <img src="img/eq2.png" height="100">
+            </a>
+        </div>
+
+        <p>Encontrando as raízes:</p>
+
+        <div>
+            <a target="_blank" href="img/eq3.png">
+                <img src="img/eq3.png" height="100">
+            </a>
+        </div>
+
+        <p>A solução homogênea portanto será:</p>
+
+        <div>
+            <a target="_blank" href="img/eq4.png">
+                <img src="img/eq4.png" height="100">
+            </a>
+        </div>
+
+        <p>Para encontrar a solução particular, define-se x<sub>0</sub> = A, e encontra-se as derivadas. Portanto:</p>
+
+        <div>
+            <a target="_blank" href="img/eq5.png">
+                <img src="img/eq5.png" height="100">
+            </a>
+        </div>
+
+        <p>Substituíndo na equação original, temos:</p>
+
+        <div>
+            <a target="_blank" href="img/eq6.png">
+                <img src="img/eq6.png" height="100">
+            </a>
+        </div>
+
+        <p>A solução da EDO será a soma da solução homogênea e da solução particular, conforme abaixo:</p>
+
+        <div>
+            <a target="_blank" href="img/eq7.png">
+                <img src="img/eq7.png" height="100">
+            </a>
+        </div>
+
+        <p>Portanto, a solução geral desta EDO será:</p>
+
+        <div>
+            <a target="_blank" href="img/eq8.png">
+                <img src="img/eq8.png" height="100">
+            </a>
+        </div>
+
+        <p>Para resolver o PVI e encontrar os coeficientes, sabe-se que:</p>
+
+        <div class="eq_longa">
+            <a target="_blank" href="img/eq9.png">
+                <img src="img/eq9.png" height="100">
+            </a>
+        </div>
+
+        <p>Aplicando as condições iniciais definidas no início, temos que:</p>
+
+        <div class="eq_longa">
+            <a target="_blank" href="img/eq10.png">
+                <img src="img/eq10.png" height="100">
+            </a>
+        </div>
+
+        <p>Finalmente:</p>
+
+        <div class="eq_longa">
+            <a target="_blank" href="img/eq11.png">
+                <img src="img/eq11.png" height="100">
+            </a>
+        </div>
+
+        <hr>
+
+        <h2>Referências bibliográficas</h2>
+
+        <p>OGATA, K. <strong>Engenharia de controle moderno</strong>, 5ª. Edição, Pearson, Rio de Janeiro, 2011, ISBN:
+            9788576058106.</p>
+
+    </body>
+
+</html>
