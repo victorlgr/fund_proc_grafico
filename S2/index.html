@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>S2 - Grupo MMA</title>
+    </head>
+
+    <body>
+        <h1>Seminário S2 - Grupo MMA</h1>
+
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>RA</th>
+            </tr>
+            <tr>
+                <td>Cauê Montrose Bianchim</td>
+                <td>11109715</td>
+            </tr>
+            <tr>
+                <td>Ismael Trinca Junior</td>
+                <td>11131611</td>
+            </tr>
+            <tr>
+                <td>Rafael Branco Totino</td>
+                <td>11201922308</td>
+            </tr>
+            <tr>
+                <td>Victor Luiz Gluz Romano</td>
+                <td>11109915</td>
+            </tr>
+        </table>
+
+        <h2>Sistema Massa Mola Amortecedor</h2>
+
+        <p>Para o projeto, optou-se por representar de forma didática um fundamento teórico estudado em disciplinas
+            passadas, o sistema massa-mola-amortecedor, visto na disciplina de Sistemas de controle 1, obrigatória para
+            a
+            Engenharia da Informação, Engenharia de Instrumentação, Automação e Robótica e também para a Engenharia
+            Aeroespacial, além de sem um dos exemplos mais clássicos de representação de um sistema de controle.</p>
+
+        <p>As equações que modelam o sistema podem ser conferidas na <a
+                href="https://htmlpreview.github.io/?https://github.com/victorlgr/fund_proc_grafico/blob/main/S2/MF2/index.html ">Modelagem
+                funcional</a></p>
+
+        <p>
+            Para compilar o programa, o usuário deve ter em mãos os dois de código fonte usados,
+            <code>mma.c</code> e <code>gui.c</code>.
+            Para compilar o código <code>mma.c</code>, deve usar o comando
+            <code>gcc -o mma mma.cpp -lglut -lGL -lGLU -lm -SOIL</code> e executar usando o comando <code>./mma</code>.
+            Para compilar o código <code>gui.c</code>, deve-se usar o comando
+            <code>gcc -Wno-format -o gui gui.c -Wno-deprecated-declarations -Wno-format-security -lm `pkg-config --cflags --libs gtk+-3.0` -export-dynamic</code>
+            e executar usando o comando <code>./gui</code>.
+            Alternativamente, pode-se executar usando o comando <code>./gui & ./mma && fg</code>, para rodar os dois
+            programas no mesmo terminal.
+            Deve-se garantir também que tenha instalado as bibliotecas g++, freeglut3-dev,
+            buildessential, libx11-dev, libxmu-dev, libxi-dev, libglu1-mesa, libglu1-mesa-dev e libsoil-dev.
+        </p>
+
+        <p>O funcionamento do sistema pode ser verificado no vídeo abaixo:</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/SUQmRuBFmYI" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+
+        <p>Como pode ser visto a partir do mostrado anteriormente, o sistema apresenta uma simulação adequada do sistema
+            massa-mola-amortecedor, atingindo o objetivo proposto, porém com ressalvas, por conta da iluminação não ser
+            muito desenvolvida dado a característica 2D do sistema. Também, pode-se melhorar a interatividade com o
+            usuário, mudando-se a biblioteca de interface gráfica para Qt, por exemplo.</p>
+
+        <hr>
+
+        <h2>Referências bibliográficas</h2>
+
+        <p>OGATA, K. <strong>Engenharia de controle moderno</strong>, 5ª. Edição, Pearson, Rio de Janeiro, 2011, ISBN:
+            9788576058106.</p>
+
+    </body>
+
+</html>
