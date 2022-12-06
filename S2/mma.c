@@ -5,6 +5,7 @@
  * Rafael Branco Totino, RA 11201922308
  * Victor Luiz Gluz Romano, RA 11109915
  * Compilar o programa com gcc -o mma mma.c -lglut -lGL -lGLU -lm -lSOIL e executar com ./mma
+ * Para rodar tanto a gui quanto o mma, rodar ./gui & ./mma && fg
  *
  */
 

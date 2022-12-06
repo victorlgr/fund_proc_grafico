@@ -5,7 +5,8 @@
  * Rafael Branco Totino, RA 11201922308
  * Victor Luiz Gluz Romano, RA 11109915
  * Compilar o programa com "gcc -Wno-format -o gui gui.c -Wno-deprecated-declarations -Wno-format-security -lm `pkg-config --cflags --libs gtk+-3.0` -export-dynamic" e executar com ./gui
- *
+ * Para rodar tanto a gui quanto o mma, rodar ./gui & ./mma && fg
+ * 
  */
 
 #include <stdlib.h>
