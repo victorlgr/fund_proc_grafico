@@ -1,12 +1,13 @@
 /*
- * Seminário 1 - Grupo MMA
+ * Seminário 2 - Grupo MMA
  * Cauê Montrose Bianchim, RA 11109715
  * Ismael Trinca Junior, RA 11131611
  * Rafael Branco Totino, RA 11201922308
  * Victor Luiz Gluz Romano, RA 11109915
- * Compilar o programa com gcc -o mma mma.c -lglut -lGL -lGLU -lm e executar com ./mma X, sendo X a opção desejada (1, 2, 3)
+ * Compilar o programa com gcc -o mma mma.c -lglut -lGL -lGLU -lm -lSOIL e executar com ./mma
  *
  */
+
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
@@ -17,6 +18,7 @@
 #include <complex.h>
 #include <sys/stat.h>
 #include <time.h>
+#include "SOIL/SOIL.h"
 
 double posicao = 0, tempo = 0;
 double massa = 0, mola = 0, amortecedor = 0, F = 0, x0 = 0, v0 = 0;
@@ -24,12 +26,26 @@ int bool_iluminacao = 0, bool_textura = 0;
 double red_iluminacao = 0, green_iluminacao = 0, blue_iluminacao = 0, alpha_iluminacao = 0;
 long int tempo_arquivo = 0, tempo_ultimo_arquivo = 0;
 
+GLuint textura_parede;
+GLuint textura_grama;
+GLuint textura_massa;
+GLuint textura_fundo;
+
 void init(void)
 {
    glClearColor(0.0, 0.0, 0.0, 0.0);
    glShadeModel(GL_SMOOTH);
 
-   if(bool_iluminacao){
+   textura_parede = SOIL_load_OGL_texture("parede.tga", SOIL_LOAD_RGBA, SOIL_CREATE_NEW_ID, SOIL_FLAG_NTSC_SAFE_RGB);
+   textura_grama = SOIL_load_OGL_texture("grama.tga", SOIL_LOAD_RGBA, SOIL_CREATE_NEW_ID, SOIL_FLAG_NTSC_SAFE_RGB);
+   textura_massa = SOIL_load_OGL_texture("massa.tga", SOIL_LOAD_RGBA, SOIL_CREATE_NEW_ID, SOIL_FLAG_NTSC_SAFE_RGB);
+   textura_fundo = SOIL_load_OGL_texture("fundo.tga", SOIL_LOAD_RGBA, SOIL_CREATE_NEW_ID, SOIL_FLAG_NTSC_SAFE_RGB);
+}
+
+void iluminacao()
+{
+   if (bool_iluminacao == 1)
+   {
       GLfloat light_position[] = {40.0, 20.0, 20.0, 0.0};
       GLfloat light_ambient[] = {red_iluminacao, green_iluminacao, blue_iluminacao, alpha_iluminacao};
 
@@ -38,7 +54,7 @@ void init(void)
 
       glEnable(GL_LIGHTING);
       glEnable(GL_LIGHT0);
-      glEnable(GL_DEPTH_TEST);
+      glEnable(GL_COLOR_MATERIAL);
    }
 }
 
@@ -144,12 +160,106 @@ void draw_amortecedor(double x)
    glEnd();
 }
 
-void display(void)
+void draw_parede_textura(void)
 {
-   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+   glEnable(GL_TEXTURE_2D);
+   glBindTexture(GL_TEXTURE_2D, textura_parede);
+   glBegin(GL_QUADS);
+   glTexCoord2f(0, 0);
+   glVertex2f(-5.0, 80.0);
+   glTexCoord2f(1, 0);
+   glVertex2f(0.0, 80.0);
+   glTexCoord2f(1, 1);
+   glVertex2f(0.0, 0.0);
+   glTexCoord2f(0, 1);
+   glVertex2f(-5.0, 0.0);
+   glEnd();
+   glDisable(GL_TEXTURE_2D);
+}
 
-   // glColor3f(1.0, 1.0, 1.0);
+void draw_chao_textura(void)
+{
+   glEnable(GL_TEXTURE_2D);
+   glBindTexture(GL_TEXTURE_2D, textura_grama);
+   glBegin(GL_QUADS);
+   glTexCoord2f(0, 0);
+   glVertex2f(-5.0, 0.0);
+   glTexCoord2f(1, 0);
+   glVertex2f(80.0, 0.0);
+   glTexCoord2f(1, 1);
+   glVertex2f(80., -5.0);
+   glTexCoord2f(0, 1);
+   glVertex2f(-5.0, -5.0);
+   glEnd();
+   glDisable(GL_TEXTURE_2D);
+}
 
+void draw_fundo_textura(void)
+{
+   glEnable(GL_TEXTURE_2D);
+   glBindTexture(GL_TEXTURE_2D, textura_fundo);
+   glBegin(GL_QUADS);
+   glTexCoord2f(0, 0);
+   glVertex2f(0.0, 80.0);
+   glTexCoord2f(1, 0);
+   glVertex2f(80.0, 80.0);
+   glTexCoord2f(1, 1);
+   glVertex2f(80.0, 0.0);
+   glTexCoord2f(0, 1);
+   glVertex2f(0.0, 0.0);
+   glEnd();
+   glDisable(GL_TEXTURE_2D);
+}
+
+void draw_massa_textura(void)
+{
+   // Massa
+   glEnable(GL_TEXTURE_2D);
+   glBindTexture(GL_TEXTURE_2D, textura_massa);
+   glBegin(GL_POLYGON);
+   glTexCoord2f(0, 0);
+   glVertex2f(0.0, 0.0);
+   glTexCoord2f(1, 0);
+   glVertex2f(0.0, 25.0);
+   glTexCoord2f(1, 1);
+   glVertex2f(25.0, 25.0);
+   glTexCoord2f(0, 1);
+   glVertex2f(25.0, 0.0);
+   glEnd();
+   glDisable(GL_TEXTURE_2D);
+
+   glColor3f(0, 0, 0);
+   // Roda
+   glTranslatef(5, -2, 0);
+   draw_roda();
+   glTranslatef(15, 0, 0);
+   draw_roda();
+}
+
+void draw_com_textura()
+{
+   glLoadIdentity();
+   glTranslatef(-40, -40, 0);
+   draw_parede_textura();
+   draw_chao_textura();
+   draw_fundo_textura();
+
+   glLoadIdentity();
+   glTranslatef(posicao, -36, 0);
+   draw_massa_textura();
+
+   glLoadIdentity();
+   glTranslatef(-40, -15, 0);
+   draw_mola(20, 2.0 + posicao / 20);
+
+   glLoadIdentity();
+   glTranslatef(-30, -30, 0);
+   draw_amortecedor(-posicao);
+   glColor3f(1, 1, 1);
+}
+
+void draw_sem_textura()
+{
    glLoadIdentity();
    glTranslatef(-40, -40, 0);
    draw_parede();
@@ -165,6 +275,16 @@ void display(void)
    glLoadIdentity();
    glTranslatef(-30, -30, 0);
    draw_amortecedor(-posicao);
+}
+
+void display(void)
+{
+   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+   if(bool_textura == 1)
+      draw_com_textura();
+   else
+      draw_sem_textura();
 
    glutSwapBuffers();
 }
@@ -219,6 +339,7 @@ void timer(int placeholder)
       tempo = 0;
       posicao = 0;
       ler_arquivo();
+      iluminacao();
    }
    tempo++;
    double x_t = funcao_x_t(tempo, massa, mola, amortecedor, F, x0, v0);

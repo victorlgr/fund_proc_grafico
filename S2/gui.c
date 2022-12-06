@@ -1,3 +1,13 @@
+/*
+ * Seminário 2 - Grupo MMA
+ * Cauê Montrose Bianchim, RA 11109715
+ * Ismael Trinca Junior, RA 11131611
+ * Rafael Branco Totino, RA 11201922308
+ * Victor Luiz Gluz Romano, RA 11109915
+ * Compilar o programa com "gcc -Wno-format -o gui gui.c -Wno-deprecated-declarations -Wno-format-security -lm `pkg-config --cflags --libs gtk+-3.0` -export-dynamic" e executar com ./gui
+ *
+ */
+
 #include <stdlib.h>
 #include <sys/types.h>
 #include <signal.h>
@@ -8,10 +18,13 @@
 #include <math.h>
 #include <string.h>
 
+
+char header[] = "massa;mola;amortecedor;F;x0;v0;bool_iluminacao;red_iluminacao;green_iluminacao;blue_iluminacao;alpha_iluminacao;bool_textura\n";
+char array_dados[10000] = "";
 double massa = 0, mola = 0, amortecedor = 0, F = 0, x0 = 0, v0 = 0;
 int bool_iluminacao = 0, bool_textura = 0;
+
 GdkRGBA color;
-char array_dados[] = "massa;mola;amortecedor;F;x0;v0;bool_iluminacao;red_iluminacao;green_iluminacao;blue_iluminacao;alpha_iluminacao;bool_textura\n";
 
 GtkWidget *window;
 GtkWidget *fixed;
@@ -146,25 +159,27 @@ void on_botao_textura_activate(GtkSwitch *textura_ponteiro)
 
 void comma_to_dot(char *input) {
     char *ptr = NULL;
-    while(ptr = strpbrk(input, ",")) { //find the first dot in input
-        *ptr = '.'; //replace the dot with a comma
+    while(ptr = strpbrk(input, ",")) {
+        *ptr = '.';
     }
 }
 
 void gerar_csv()
 {
-    char massa_str[10];
-    char mola_str[10];
-    char amortecedor_str[10];
-    char F_str[10];
-    char x0_str[10];
-    char v0_str[10];
-    char bool_iluminacao_str[10];
-    char bool_textura_str[10];
-    char red_str[10];
-    char green_str[10];
-    char blue_str[10];
-    char alpha_str[10];
+    array_dados[0] = '\0';
+
+    char massa_str[30];
+    char mola_str[30];
+    char amortecedor_str[30];
+    char F_str[30];
+    char x0_str[30];
+    char v0_str[30];
+    char bool_iluminacao_str[30];
+    char bool_textura_str[30];
+    char red_str[30];
+    char green_str[30];
+    char blue_str[30];
+    char alpha_str[30];
 
     sprintf(massa_str, "%f;", massa);
     sprintf(mola_str, "%f;", mola);
@@ -179,6 +194,7 @@ void gerar_csv()
     sprintf(alpha_str, "%f;", color.alpha);
     sprintf(bool_textura_str, "%d", bool_textura);
 
+    strcat(array_dados, header);
     strcat(array_dados, massa_str);
     strcat(array_dados, mola_str);
     strcat(array_dados, amortecedor_str);
@@ -191,6 +207,7 @@ void gerar_csv()
     strcat(array_dados, blue_str);
     strcat(array_dados, alpha_str);
     strcat(array_dados, bool_textura_str);
+    strcat(array_dados, "\0");
 
     comma_to_dot(array_dados);
 
