@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>Perguntas - Grupo MMA</title>
+    </head>
+
+    <body>
+        <h1>Perguntas - Grupo MMA</h1>
+
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>RA</th>
+            </tr>
+            <tr>
+                <td>Cauê Montrose Bianchim</td>
+                <td>11109715</td>
+            </tr>
+            <tr>
+                <td>Ismael Trinca Junior</td>
+                <td>11131611</td>
+            </tr>
+            <tr>
+                <td>Rafael Branco Totino</td>
+                <td>11201922308</td>
+            </tr>
+            <tr>
+                <td>Victor Luiz Gluz Romano</td>
+                <td>11109915</td>
+            </tr>
+        </table>
+
+        <h2>Laboratório MMA</h2>
+
+            <p>O presente relatório visa aumentar a compreensão de como funciona o sistema massa mola amortecedor, como também ter uma melhor visualização do que acontece em um sistema sem amortecimento, subamortecido, criticamente amortecido e sobreamortecido.</p>
+            <p>O primeiro passo é, em um sistema Linux, instalar as bibliotecas g++, freeglut3-dev, buildessential, libx11-dev, libxmu-dev, libxi-dev, libglu1-mesa, libglu1-mesa-dev e libsoil-dev. Em seguida baixar os códigos fontes disponibilizados. Para compilar os códigos basta utilizar o comando, no prompt de comando, <code>gcc -o mma mma.cpp -lglut -lGL -lGLU -lm -SOIL</code> e executar o comando <code>./mma</code>, isso para o compilar o código <code>mma.c</code>, já  para o código <code>gui.c</code> deve-se utilizar o comando <code>gcc -Wno-format -o gui gui.c -Wno-deprecated-declarations -Wno-format-security -lm `pkg-config --cflags --libs gtk+-3.0` -export-dynamic</code> e executar usando o comando <code>./gui</code>.</p>
+            <p>Com o programa funcionando, na janela de variáveis, simule os seguintes casos:</p>
+        
+        <p>Caso 1) m = 1 kg, k = 1,5 N/m, b = 0 kg/s, F = 1 N, x0 = 0 m, v0 = 0 m.</p>
+        
+        <p>Caso 2) m = 1 kg, k = 2 N/m, b = 0,1 kg/s, F = 5 N, x0 = 0 m, v0 = 0 m.</p>
+        
+        <p>Caso 3) m = 1 kg, k = 1 N/m, b = 2 kg/s, F = 5 N, x0 = 0 m, v0 = 0 m. Obs.: no valor de b utilize 2,01 para que não ocorra erros no programa.</p>
+        
+        <p>Caso 4) m = 1 kg, k = 1 N/m, b = 4 kg/s, F = 5 N, x0 = 0 m, v0 = 0 m.</p>
+        
+            <p>Observe o que acontece com o sistema para cado caso e em seguida, tente responder as perguntas a seguir:</p>
+        
+        <p>1) Para cada sistema, a partir do comportamento visto, diga como o sistema se comporta (sem amortecimento, subamortecido, criticamente amortecido e sobreamortecido). Explique porque cada caso representa um dos comportamentos citados.</p>
+        
+        <p>2) A partir das simulações, tente esboçar os gráficos para cada caso. Em seguida, explique como chegou nesses esboços.</p>
+        
+        <p>3) Na sua opinião, qual ou quais sistemas você usaria em uma aplicação real? (Em um carro por exemplo). Explique.</p>
+
+        <a
+            href="https://htmlpreview.github.io/?https://github.com/victorlgr/fund_proc_grafico/blob/main/S2/Perguntas/Lab_MMA.pdf ">Pdf do arquivo.</a>
+
+
+    </body>
+
+</html>
